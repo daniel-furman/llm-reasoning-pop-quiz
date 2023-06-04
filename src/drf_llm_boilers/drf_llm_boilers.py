@@ -33,7 +33,16 @@ class llm_boiler:
         self.model, self.tokenizer = self.load_fn(self.model_id)
         self.name = self.run_fn.__name__.lower()
 
-    def run(self, prompt, eos_token_ids, max_new_tokens, num_return_sequences):
+    def run(
+        self,
+        prompt,
+        eos_token_ids,
+        max_new_tokens,
+        temperature,
+        do_sample,
+        top_p,
+        top_k,
+    ):
         # try:
         return self.run_fn(
             self.model,
@@ -41,11 +50,11 @@ class llm_boiler:
             prompt=prompt,
             eos_token_ids=eos_token_ids,
             max_new_tokens=max_new_tokens,
-            do_sample=True,
-            temperature=1.0,
-            top_p=1.0,
-            top_k=50,
-            num_return_sequences=num_return_sequences,
+            temperature=temperature,
+            do_sample=do_sample,
+            top_p=top_p,
+            top_k=top_k,
+            num_return_sequences=1,
         )
         # except:
         # print("ERROR: something went wrong running model")
