@@ -9,17 +9,19 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 ---
 
 | model                      | release date | quiz score* |
-|----------------------------|--------------|-------------|
-| `openai/gpt-4`               | Mar 2023     |             |
-| `openai/gpt-3.5`             | Nov 2022     |             |
-| `tiiuae/falcon-40b-instruct` | May 2023     |             |
+|----------------------------|--------------|:-------------:|
+| `openai/gpt-4`               | Mar 2023     |     8/8        |
+| `openai/gpt-3.5`             | Nov 2022     |     8/8         |
+| `tiiuae/falcon-40b-instruct` | May 2023     |     8/8        |
 
 
 **Table 1**: Overall quiz scores. *How quiz scores were evaluated... insert.
 
-## Question / Answers
+<br>
 
-### 1. Zero-shot reasoning conditioned on good performance
+## Pop Quiz Results
+
+### Section 1. Zero-shot reasoning conditioned on good performance
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
 
@@ -39,7 +41,9 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 | `openai/gpt-3.5`             | ✅       |  |
 | `tiiuae/falcon-40b-instruct` | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday. His barber works on Mondays, Wednesdays, and Fridays, so Daniel should have waited until one of those days to get a haircut. |
 
-### 2. Chain-of-thought reasoning with few-shot examples
+<br>
+
+### Section 2. Chain-of-thought reasoning with few-shot examples
 
 * From [https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html](https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html)
 
@@ -59,7 +63,9 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 | `openai/gpt-3.5`             | ✅       |  |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 4 children. 50% of his children are in college and no longer live at home. So, 2 of his children are in college. Therefore, 2 of his children still live at home. The answer is 2. |
 
-### 3. Least to most prompting
+<br>
+
+### Section 3. Least to most prompting
 
 * From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
 
@@ -101,13 +107,14 @@ Response #2:
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 46 minutes to shop before the store closes. He can make it to the store before it closes. |
 
 
+<br>
 
+## Dev
 
 ### TO DOs
 
 * read in a yaml file with prompts to run!
 * add two more examples per type, perhaps referencing the papers for the other examples
-* add direct caching to csv in notebook, enable running chunks separately, caching
 * include gpt-3.5 api in class 
 * include dolly-v2-12b in class
 * include falcon-chat in class
