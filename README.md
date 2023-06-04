@@ -17,7 +17,7 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 **Table 1**: Overall quiz scores. *How quiz scores were evaluated... insert.
 
-## Question generations
+## Question / Answers
 
 ### 1. Zero-shot reasoning conditioned on good performance
 
@@ -25,9 +25,9 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| openai/gpt-4               | ☑️       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
-| openai/gpt-3.5             | ☑️       | There are 4 blue golf balls.                                                                                              |
-| tiiuae/falcon-40b-instruct | ☑️       | Coming                                                                                                                    |                                                                                                                       |
+| `openai/gpt-4`               | ✅       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
+| `openai/gpt-3.5`             | ✅       | There are 4 blue golf balls.                                                                                              |
+| `tiiuae/falcon-40b-instruct` | ✅       | Coming                                                                                                                    |                                                                                                                       |
 
 ### TO DOs
 
