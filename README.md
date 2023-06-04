@@ -10,9 +10,9 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 | model                      | release date | quiz score* |
 |----------------------------|--------------|-------------|
-| openai/gpt-4               | Mar 2023     |             |
-| openai/gpt-3.5             | Nov 2022     |             |
-| tiiuae/falcon-40b-instruct | May 2023     |             |
+| `openai/gpt-4`               | Mar 2023     |             |
+| `openai/gpt-3.5`             | Nov 2022     |             |
+| `tiiuae/falcon-40b-instruct` | May 2023     |             |
 
 
 **Table 1**: Overall quiz scores. *How quiz scores were evaluated... insert.
@@ -27,7 +27,15 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
 | `openai/gpt-3.5`             | ✅       | There are 4 blue golf balls.                                                                                              |
-| `tiiuae/falcon-40b-instruct` | ✅       | Coming                                                                                                                    |                                                                                                                       |
+| `tiiuae/falcon-40b-instruct` | ✅       | Half of the balls are golf balls, so there are 8 golf balls. Half of those are blue, so there are 4 blue golf balls.                                                                                                                    |             
+
+1.2: Q: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.
+
+| model                      | correct | response             |
+|----------------------|:---------:|--------------------------|
+| `openai/gpt-4`               | ✅       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
+| `openai/gpt-3.5`             | ✅       | There are 4 blue golf balls.                                                                                              |
+| `tiiuae/falcon-40b-instruct` | ✅       | Half of the balls are golf balls, so there are 8 golf balls. Half of those are blue, so there are 4 blue golf balls.                                                                                                                    |                                                                                                                |
 
 ### TO DOs
 
