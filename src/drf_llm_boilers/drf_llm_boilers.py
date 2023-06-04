@@ -64,7 +64,7 @@ MODEL_FUNCTIONS = []
 ## falcon models
 def falcon_loader(
     model_id: str,
-) -> List[transformers.AutoModelForCausalLM, transformers.AutoTokenizer]:
+):
     # see source: https://huggingface.co/tiiuae/falcon-40b-instruct#how-to-get-started-with-the-model
 
     # this will take a long time, to avoid: deploy the LLM as an API inference endpoint
