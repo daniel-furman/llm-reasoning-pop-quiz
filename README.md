@@ -8,13 +8,14 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 ---
 
-| model                      | quiz score* |
-|----------------------------|:-------------:|
-| openai/gpt-4               |      9/9       |
-| openai/gpt-3.5             |      9/9       |
-| tiiuae/falcon-40b-instruct |      9/9       |
+| model                      | release date | quiz score* |
+|----------------------------|--------------|-------------|
+| openai/gpt-4               | Mar 2023     |             |
+| openai/gpt-3.5             | Nov 2022     |             |
+| tiiuae/falcon-40b-instruct | May 2023     |             |
 
-**Table 1**: Overall quiz scores
+
+**Table 1**: Overall quiz scores. *How quiz scores were evaluated... insert.
 
 [Forthcoming]
 
