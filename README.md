@@ -10,12 +10,10 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 ### TO DOs
 
-* add a github repo for these where the modeling pipeline function gets read in from a script
 * add two more examples per type, perhaps referencing the papers for the other examples
 * add direct caching to csv in notebook, enable running chunks separately, caching
 * model results 
 * include gpt-3.5 api
 * include dolly-v2-12b
-* include llama-33b as a flex?
-* include falcon-chat / falcon base model for comparison!
+* include falcon-chat
 * read in a yaml file with prompts to run!

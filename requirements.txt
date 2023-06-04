@@ -6,3 +6,5 @@ einops==0.6.1
 bitsandbytes==0.39.0
 sentencepiece==0.1.99
 black[jupyter]
+python-dotenv
+.
