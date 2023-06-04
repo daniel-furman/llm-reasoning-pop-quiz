@@ -124,7 +124,7 @@ def falcon(
         num_return_sequences (int, optional): The number of independently computed returned sequences for each
             element in the batch. Defaults to 1.
     """
-    # streamer = transformers.TextStreamer(tokenizer)
+    streamer = transformers.TextStreamer(tokenizer)
 
     inputs = tokenizer(
         prompt,
@@ -147,7 +147,7 @@ def falcon(
             num_return_sequences=num_return_sequences,
             pad_token_id=tokenizer.eos_token_id,
             bos_token_id=tokenizer.eos_token_id,
-            # streamer=streamer,
+            streamer=streamer,
         )
 
     generated_text = tokenizer.decode(
