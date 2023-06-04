@@ -18,17 +18,12 @@
 **Table 1**: Overall quiz scores. *The response's reasoning and answer both needed to be sound to yield a correct answer.
 
 <br>
-<br>
 
 ## Questions with Answers
-
-<br>
 
 ### Section 1. Zero-shot reasoning conditioned on good performance
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
-
-<br>
 
 **1.1**: Q: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.
 
@@ -49,13 +44,10 @@
 | `tiiuae/falcon-40b-instruct` | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday. His barber works on Mondays, Wednesdays, and Fridays, so Daniel should have waited until one of those days to get a haircut. |
 
 <br>
-<br>
 
 ### Section 2. Chain-of-thought reasoning with few-shot examples
 
 * From [https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html](https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html)
-
-<br>
 
 **2.1**: Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does have now? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11. Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.
 
@@ -76,13 +68,11 @@
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 4 children. 50% of his children are in college and no longer live at home. So, 2 of his children are in college. Therefore, 2 of his children still live at home. The answer is 2. |
 
 <br>
-<br>
 
 ### Section 3. Least to most prompting
 
 * From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
 
-<br>
 
 **3.1**: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. Q: How long does each trip take? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. {insert response #1} The slide closes in 15 minutes. Q: How many times can she slide before it closes? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. {insert response #2}
 
