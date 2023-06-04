@@ -39,8 +39,8 @@
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | No, it doesn't make logical sense because Daniel's barber does not work on Sundays. |
+| `openai/gpt-3.5`             | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday because his barber works on Mondays, Wednesdays, and Fridays. |
 | `tiiuae/falcon-40b-instruct` | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday. His barber works on Mondays, Wednesdays, and Fridays, so Daniel should have waited until one of those days to get a haircut. |
 
 <br>
@@ -53,8 +53,8 @@
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | After using 20 apples for lunch, the cafeteria has 3 apples left. With the purchase of 6 more apples, they now have 9 apples. |
+| `openai/gpt-3.5`             | ✅       | The cafeteria now has 9 apples. |
 | `tiiuae/falcon-40b-instruct` | ✅       | The cafeteria started with 23 apples. They used 20 to make lunch, so they have 3 apples left. They bought 6 more, so they have 9 apples now. The answer is 9. |
 
 <br>
@@ -63,8 +63,8 @@
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | Ben has 4 children and 50% of them are in college and no longer live at home. Therefore, the other 50%, which is 2 children, still live at home. |
+| `openai/gpt-3.5`             | ✅       | Two of Ben's children still live at home. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 4 children. 50% of his children are in college and no longer live at home. So, 2 of his children are in college. Therefore, 2 of his children still live at home. The answer is 2. |
 
 <br>
@@ -80,16 +80,16 @@ Response #1:
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | Each trip takes Amy 5 minutes (4 minutes climbing + 1 minute sliding down). |
+| `openai/gpt-3.5`             | ✅       | Each trip takes 5 minutes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy climbs up the slide for 4 minutes, then slides down for 1 minute. Therefore, each trip takes 5 minutes. |
 
 Response #2:
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | Amy can slide 3 times before the slide closes (15 minutes total / 5 minutes per slide). |
+| `openai/gpt-3.5`             | ✅       | Amy can slide down the slide 3 times before it closes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 3 times before it closes. (15 minutes / 5 minutes per trip = 3 trips) |
 
 <br>
@@ -100,16 +100,16 @@ Response #1:
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | It takes Ben a total of 14 minutes (10 minutes driving + 4 minutes parking) to start shopping. |
+| `openai/gpt-3.5`             | ✅       | Ben takes 14 minutes before he can start shopping. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben takes 10 minutes to drive to the store. He then takes 4 minutes to find parking. Therefore, it takes Ben 14 minutes to get to the store and find parking. Once he finds parking, he can start shopping. |
 
 Response #2:
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | Yes, Ben can make it to the store before it closes since it only takes him 14 minutes to get there and start shopping, and the store closes in an hour. |
+| `openai/gpt-3.5`             | ✅       | Yes, Ben can make it to the store before it closes. He has 46 minutes remaining before the store closes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 46 minutes to shop before the store closes. He can make it to the store before it closes. |
 
 <br>
