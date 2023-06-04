@@ -1,0 +1,8 @@
+git+https://github.com/huggingface/accelerate.git#egg=accelerate
+git+https://github.com/huggingface/transformers.git#egg=transformers
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.0.1
+einops==0.6.1
+bitsandbytes==0.39.0
+sentencepiece==0.1.99
+black[jupyter]
