@@ -8,12 +8,29 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 ---
 
+| model                      | quiz score* |
+|----------------------------|:-------------:|
+| openai/gpt-4               |      9/9       |
+| openai/gpt-3.5             |      9/9       |
+| tiiuae/falcon-40b-instruct |      9/9       |
+
+**Table 1**: Overall quiz scores
+
+[Forthcoming]
+
+**Table 2**: Individual question scores
+
+[Forthcoming]
+
+**Table 3**: Generated responses with scores
+
+
+
 ### TO DOs
 
+* read in a yaml file with prompts to run!
 * add two more examples per type, perhaps referencing the papers for the other examples
 * add direct caching to csv in notebook, enable running chunks separately, caching
-* model results 
-* include gpt-3.5 api
-* include dolly-v2-12b
-* include falcon-chat
-* read in a yaml file with prompts to run!
+* include gpt-3.5 api in class 
+* include dolly-v2-12b in class
+* include falcon-chat in class
