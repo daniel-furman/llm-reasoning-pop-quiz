@@ -4,9 +4,9 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) 
 
-Do open-source LLMs have the reasoning prowess of ChatGPT?
-
 ---
+
+## Test Leaderboard
 
 | model                      | release date | quiz score* |
 |----------------------------|--------------|:-------------:|
@@ -20,7 +20,7 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 <br>
 <br>
 
-## Quiz Results
+## Questions with Answers
 
 <br>
 
