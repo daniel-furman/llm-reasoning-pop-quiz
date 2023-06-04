@@ -126,7 +126,13 @@ def falcon(
     """
     # streamer = transformers.TextStreamer(tokenizer)
 
-    inputs = tokenizer(prompt, padding=True, truncation=True, return_tensors="pt")
+    inputs = tokenizer(
+        prompt,
+        padding=True,
+        truncation=True,
+        return_tensors="pt",
+        return_token_type_ids=False,
+    )
     inputs = inputs.to(device)
 
     with torch.cuda.amp.autocast():
