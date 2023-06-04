@@ -19,12 +19,15 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 
 ## Question generations
 
-### Zero-shot reasoning conditioned on good performance
-| model                      | correct? | prompt: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. |
-|----------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| openai/gpt-4               | ✅        | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls.                                                                                                                                                             |
-| openai/gpt-3.5             | ✅        | There are 4 blue golf balls.                                                                                                                                                                                                                                                          |
-| tiiuae/falcon-40b-instruct | Coming        | Coming                                                                                                                                                                                                                                                                                |                                                                                                                                                                                                                                                                                     |
+### 1. Zero-shot reasoning conditioned on good performance
+
+1.1: Q: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.
+
+| model                      | correct | response             |
+|----------------------|:---------:|--------------------------|
+| openai/gpt-4               | ☑️       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
+| openai/gpt-3.5             | ☑️       | There are 4 blue golf balls.                                                                                              |
+| tiiuae/falcon-40b-instruct | ☑️       | Coming                                                                                                                    |                                                                                                                       |
 
 ### TO DOs
 
