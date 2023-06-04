@@ -15,11 +15,11 @@ Do open-source LLMs have the reasoning prowess of ChatGPT?
 | `tiiuae/falcon-40b-instruct` | May 2023     |     8/8        |
 
 
-**Table 1**: Overall quiz scores. *How quiz scores were evaluated... insert.
+**Table 1**: Overall quiz scores. *The response's reasoning and answer both needed to be sound to yield a correct answer.
 
 <br>
 
-## Pop Quiz Results
+## Pop Quiz
 
 ### Section 1. Zero-shot reasoning conditioned on good performance
 
