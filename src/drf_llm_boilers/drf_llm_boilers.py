@@ -67,6 +67,7 @@ MODEL_FUNCTIONS = []
 # * run function must identify the correct model_id
 # * all functions must be added to master lists in order
 
+
 ## falcon models
 def falcon_loader(
     model_id: str,  # HF model id
@@ -138,7 +139,6 @@ def falcon(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-
     """
     Initialize the pipeline
     Uses Hugging Face GenerationConfig defaults

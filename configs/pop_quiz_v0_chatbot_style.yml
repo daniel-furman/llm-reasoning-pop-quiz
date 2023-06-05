@@ -1,6 +1,6 @@
 prompts:
   zero_shot: [
-    "<human>: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? Respond as succinctly as possible to answer the question. <bot>:",
+    "<human>: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.  <bot>:",
     "<human>: Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? Respond as succinctly as possible to answer the question. <bot>:",
   ]
   cot_few_shot: [

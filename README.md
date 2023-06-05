@@ -13,9 +13,13 @@
 | `openai/gpt-4`               | Mar 2023     |     8/8        |
 | `openai/gpt-3.5`             | Nov 2022     |     8/8         |
 | `tiiuae/falcon-40b-instruct` | May 2023     |     8/8        |
+| `dfurman/falcon-40b-chat-oasst1` | May 2023     |     x/8        |
+| `google/flan-t5-xxl`         | Sep 2021     |     y/8        |
+| `databricks/dolly-v2-12b`    | Apr 2023     |     z/8        |
 
 
-**Table 1**: Overall quiz scores. *The response's reasoning and answer both needed to be sound to yield a correct answer.
+
+**Table 1**: Overall quiz scores. *The model gets a full point for each question if (and only if) both the reasoning and the answer are correct in the response.  
 
 <br>
 
@@ -82,7 +86,7 @@ Response #1:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Each trip takes Amy 5 minutes (4 minutes climbing + 1 minute sliding down). |
 | `openai/gpt-3.5`             | ✅       | Each trip takes 5 minutes. |
-| `tiiuae/falcon-40b-instruct` | ✅       | Amy climbs up the slide for 4 minutes, then slides down for 1 minute. Therefore, each trip takes 5 minutes. |
+| `tiiuae/falcon-40b-instruct` | ✅       | Amy climbs up the slide in 4 minutes, so it takes her 4 minutes to complete one trip. She slides down the slide in 1 minute, so it takes her 1 minute to complete one trip. Therefore, each trip takes 5 minutes." |
 
 Response #2:
 
@@ -90,7 +94,7 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Amy can slide 3 times before the slide closes (15 minutes total / 5 minutes per slide). |
 | `openai/gpt-3.5`             | ✅       | Amy can slide down the slide 3 times before it closes. |
-| `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 3 times before it closes. (15 minutes / 5 minutes per trip = 3 trips) |
+| `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 3 times before the slide closes. (15 minutes / 5 minutes per trip = 3 trips) |
 
 <br>
 
@@ -119,9 +123,7 @@ Response #2:
 
 ### TO DOs
 
-* read in a yaml file with prompts to run!
 * add two more examples per type, perhaps referencing the papers for the other examples
 * include gpt-3.5 api in class 
 * include dolly-v2-12b in class
-* include falcon-chat in class
 * ensemble learning examples with n_responses = 3 with max voting for harder questions?
