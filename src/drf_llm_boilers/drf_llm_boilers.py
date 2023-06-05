@@ -29,7 +29,7 @@ class llm_boiler:
                     f"Run function recognized for {self.model_id}: {run_function.__name__.lower()}"
                 )
                 self.run_fn = run_function
-        self.model, self.tokenizer = self.load_fn(self.model_id, self.lora)
+        self.model, self.tokenizer = self.load_fn(self.model_id)
         self.name = self.run_fn.__name__.lower()
 
     def run(
