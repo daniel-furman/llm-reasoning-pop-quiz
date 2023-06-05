@@ -158,14 +158,26 @@ def falcon(
             bos_token_id=tokenizer.eos_token_id,
             streamer=streamer,
         )
+    if num_return_sequences == 1:
+        generated_text = tokenizer.decode(
+            output_tokens[0][len(inputs.input_ids[0]) :], skip_special_tokens=True
+        )
+        if generated_text[0] == " ":
+            generated_text = generated_text[1:]
 
-    generated_text = tokenizer.decode(
-        output_tokens[0][len(inputs.input_ids[0]) :], skip_special_tokens=True
-    )
-    if generated_text[0] == " ":
-        generated_text = generated_text[1:]
+        return generated_text
 
-    return generated_text
+    else:
+        generated_text_list = []
+        for i in range(num_return_sequences):
+            generated_text = tokenizer.decode(
+                output_tokens[i][len(inputs.input_ids[0]) :], skip_special_tokens=True
+            )
+            if generated_text[0] == " ":
+                generated_text = generated_text[1:]
+            generated_text_list.append(generated_text)
+
+        return generated_text_list
 
 
 MODEL_FUNCTIONS.append(falcon)

@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name="drf_llm_boilers",
-    version="0.1.0",
+    version="0.1.1",
     author="Daniel Furman",
     description=("Utilities for text generation."),
     long_description="",
