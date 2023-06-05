@@ -42,6 +42,7 @@ class llm_boiler:
         do_sample,
         top_p,
         top_k,
+        num_return_sequences,
     ):
         # try:
         return self.run_fn(
@@ -54,7 +55,7 @@ class llm_boiler:
             do_sample=do_sample,
             top_p=top_p,
             top_k=top_k,
-            num_return_sequences=1,
+            num_return_sequences=num_return_sequences,
         )
         # except:
         # print("ERROR: something went wrong running model")
