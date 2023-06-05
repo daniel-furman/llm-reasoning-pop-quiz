@@ -124,3 +124,4 @@ Response #2:
 * include gpt-3.5 api in class 
 * include dolly-v2-12b in class
 * include falcon-chat in class
+* ensemble learning examples with n_responses = 3 with max voting for harder questions?
