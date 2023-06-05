@@ -8,7 +8,7 @@
 
 ## Test Leaderboard
 
-| model                      | release date | quiz score* |
+| model                      | release date | quiz score |
 |----------------------------|--------------|:-------------:|
 | `openai/gpt-4`               | Mar 2023     |     8/8        |
 | `openai/gpt-3.5`             | Nov 2022     |     8/8         |
@@ -19,7 +19,7 @@
 
 
 
-**Table 1**: Overall quiz scores. *The model gets a full point for each question if (and only if) both the reasoning and the answer are correct in the response.  
+**Table 1**: Overall quiz scores. For each question, the model gets a full point if both the reasoning and the answer are correct throughout the response and a half point if the answer is correct yet some of the reasoning is inaccurate. 
 
 <br>
 
