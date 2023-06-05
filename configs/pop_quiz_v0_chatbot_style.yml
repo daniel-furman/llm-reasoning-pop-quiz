@@ -1,20 +1,20 @@
 prompts:
   zero_shot: [
-    "<human>: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
-    "<human>: Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
+    "<human>: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? Respond as succinctly as possible to answer the question. <bot>:",
+    "<human>: Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? Respond as succinctly as possible to answer the question. <bot>:",
   ]
   cot_few_shot: [
-    "<human>: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does have now? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11. <human>: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
-    "<human>: Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. Roger has 3 children, each of whom came to the party. Each of them have 4 friends coming over. 3 * 4 = 12. So 12 of their friends came to the party. 12 + 3 = 15. So, there are 15 children at the party in total. The answer is 15. <human>: Ben has 4 children. 50% of his kids are in college and no longer live at home. How many of Ben's children still live at home? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
+    "<human>: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does have now? Respond as succinctly as possible to answer the question. <bot>: Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11. <human>: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? Respond as succinctly as possible to answer the question. <bot>:",
+    "<human>: Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party? Respond as succinctly as possible to answer the question. <bot>: Roger has 3 children, each of whom came to the party. Each of them have 4 friends coming over. 3 * 4 = 12. So 12 of their friends came to the party. 12 + 3 = 15. So, there are 15 children at the party in total. The answer is 15. <human>: Ben has 4 children. 50% of his kids are in college and no longer live at home. How many of Ben's children still live at home? Respond as succinctly as possible to answer the question. <bot>:",
   ]
   least_to_most: [
     [
-      "<human>: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
-      "<human>: The slide closes in 15 minutes. How many times can she slide before it closes? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
+      "<human>: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take? Respond as succinctly as possible to answer the question. <bot>:",
+      "<human>: The slide closes in 15 minutes. How many times can she slide before it closes? Respond as succinctly as possible to answer the question. <bot>:",
     ],
     [
-      "<human>: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
-      "<human>: The store closes in an hour. Can he make to the store before it closes? <bot>: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question.",
+      "<human>: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping? Respond as succinctly as possible to answer the question. <bot>:",
+      "<human>: The store closes in an hour. Can he make to the store before it closes? Respond as succinctly as possible to answer the question. <bot>:",
     ],
   ]
 
