@@ -95,10 +95,12 @@ def falcon_loader(
 
     if lora:
         # see source: https://huggingface.co/dfurman/falcon-40b-chat-oasst1#first-load-the-model
-        tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
-        tokenizer.pad_token = tokenizer.eos_token
-
         config = peft.PeftConfig.from_pretrained(model_id)
+
+        tokenizer = transformers.AutoTokenizer.from_pretrained(
+            config.base_model_name_or_path
+        )
+        tokenizer.pad_token = tokenizer.eos_token
 
         bnb_config = transformers.BitsAndBytesConfig(
             load_in_4bit=True,
