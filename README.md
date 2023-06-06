@@ -134,7 +134,7 @@ Response #2:
 
 * From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
 
-**4.1**. Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flower will he plant? Format the response as a completion of this table. \n\n |step|subquestion|procedure|result| {insert response #1}. Therefore, the answer is {insert response #2}.
+**4.1**: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
 
 Response #1 (formatted differently due to tabular nature of responses)
 
@@ -165,3 +165,28 @@ Response #2:
 | `google/flan-t5-xxl` |        |  |
 
 <br>
+
+**4.2**: Example 1: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|\n|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (36) by the number of red tulips per row (6).|36 / 6 = 6 rows|\n|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (24) by the number of blue tulips per row (8).|24 / 8 = 3 rows|\n|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. \nTherefore, the answer is Jackson will plant 9 total rows of flowers. Example 2:  Jackson is planting tulips. He can fit 3 red tulips in a row and 4 blue tulips in a row. If Jackson buys 18 red tulips and 12 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
+
+Response #1 (formatted differently due to tabular nature of responses)
+
+`openai/gpt-4`'s response (✅): 
+
+
+`openai/gpt-3.5`'s response (✅):
+
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|   1  | Rows of red tulips            | Divide 18 by 3 (red tulips per row)           |   6    |
+|   2  | Rows of blue tulips           | Divide 12 by 4 (blue tulips per row)          |   3    |
+|   3  | Total rows of flowers         | Add the results from step 1 and 2             |   9    |
+
+Response #2:
+
+| model                      | correct | response             |
+|----------------------|:---------:|--------------------------|
+| `openai/gpt-4`               | ✅       |  |
+| `openai/gpt-3.5`             | ✅       |  |
+| `tiiuae/falcon-40b-instruct` |        | |
+| `google/flan-t5-xxl` |        |  |
+
