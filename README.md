@@ -12,8 +12,8 @@
 |----------------------------|--------------|:-------------:|
 | `openai/gpt-4`               | Mar 2023     |     12/12       |
 | `openai/gpt-3.5`             | Nov 2022     |     12/12       |
-| `tiiuae/falcon-40b-instruct` | May 2023     |     8/12        |
-| `google/flan-t5-xxl`         | Sep 2021     |     4/12        |
+| `tiiuae/falcon-40b-instruct` | May 2023     |     10/12       |
+| `google/flan-t5-xxl`         | Sep 2021     |     7/12        |
 
 For each of the questions, points were allocated as follows:
 
@@ -131,7 +131,7 @@ Response #2:
 
 ### Section 4. Tab-CoT (Tabular Chain of Thought)
 
-* From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
+* From [https://arxiv.org/abs/2305.17812](https://arxiv.org/abs/2305.17812)
 
 **4.1**: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
 
@@ -153,7 +153,21 @@ Response #1 (formatted differently due to tabular nature of responses)
 |   2  | Rows of blue tulips     | Divide 24 by 8 (blue tulips/row)   |   3    |
 |   3  | Total rows of flowers   | Add the results from step 1 and 2  |   9    |
 
-`tiiuae/falcon-40b-instruct`'s response (✅):
+`tiiuae/falcon-40b-instruct`'s response (❌):
+
+| Step |       Subquestion        |             Procedure             | Result |
+|:------:|:-------------------------:|:-----------------------------------:|:--------:|
+|1|How many red tulips can Jackson fit in a row?|6|
+|2|How many blue tulips can Jackson fit in a row?|8|
+|3|How many red tulips did Jackson buy?|36|
+|4|How many blue tulips did Jackson buy?|24|
+|5|How many rows of flowers will Jackson plant?|6|
+|6|How many rows of blue tulips will Jackson plant?|2|
+|7|How many rows of red tulips will Jackson plant?|4|
+|8|How many rows of flowers will Jackson plant in total?|6+2+4=12|
+
+`google/flan-t5-xxl`'s response (❌):
+Step 1: How many red tulips will Jackson plant? Step 2: How many blue tulips will Jackson plant? Step 3: How many rows of flowers will Jackson plant?
 
 Response #2:
 
@@ -161,8 +175,8 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Jackson will plant 9 total rows of flowers. |
 | `openai/gpt-3.5`             | ✅       | Therefore, the answer is that Jackson will plant a total of 9 rows of flowers. |
-| `tiiuae/falcon-40b-instruct` |        | |
-| `google/flan-t5-xxl` |        |  |
+| `tiiuae/falcon-40b-instruct` | ❌       | Text generation: "12."|
+| `google/flan-t5-xxl` |   ✅     | 36 red tulips / 6 red tulips / row = 6 red tulips / row. 24 blue tulips / 8 blue tulips / row = 3 blue tulips / row. 6 red tulips / row + 3 blue tulips / row = 9 rows of flowers. |
 
 <br>
 
@@ -188,6 +202,19 @@ Response #1 (formatted differently due to tabular nature of responses)
 
 `tiiuae/falcon-40b-instruct`'s response (✅):
 
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
+
+`google/flan-t5-xxl`'s response (✅):
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows| 
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows| 
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
+
 
 Response #2:
 
@@ -195,6 +222,6 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | In the second example, Jackson will plant 9 total rows of flowers. |
 | `openai/gpt-3.5`             | ✅       | In Example 2, Jackson will also plant a total of 9 rows of flowers. |
-| `tiiuae/falcon-40b-instruct` |        | |
-| `google/flan-t5-xxl` |        |  |
+| `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
+| `google/flan-t5-xxl` |    ✅    | |6 + 3 = 9 rows|. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
 
