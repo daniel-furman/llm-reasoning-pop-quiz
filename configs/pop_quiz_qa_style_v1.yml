@@ -19,7 +19,7 @@ prompts:
   ]
   tab_cot: [
     [
-      "Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flower will he plant? Format the response as a completion of this table. |step|subquestion|procedure|result|",
+      "Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table. |step|subquestion|procedure|result|",
       "Therefore, the answer is",
     ],
   ]
