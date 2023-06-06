@@ -275,7 +275,6 @@ def dolly_loader(
     # see dolly model card for source code
 
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
-    tokenizer.pad_token = tokenizer.eos_token
 
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_id,
