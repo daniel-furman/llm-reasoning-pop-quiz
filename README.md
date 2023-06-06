@@ -15,12 +15,6 @@
 | `tiiuae/falcon-40b-instruct` | May 2023     |     10/12       |
 | `google/flan-t5-xxl`         | Sep 2021     |     7/12        |
 
-For each of the questions, points were allocated as follows:
-
-* A full point was awarded if both the reasoning and the answer were correct throughout the response
-* A half point was awarded if the answer was correct but some of the reasoning was flawed
-* Zero points were awarded if the answer was incorrect
-
 <br>
 
 ## Questions with Answers
