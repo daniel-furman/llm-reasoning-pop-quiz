@@ -10,11 +10,10 @@
 
 | model                      | release date | quiz score |
 |----------------------------|--------------|:-------------:|
-| `openai/gpt-4`               | Mar 2023     |     8/8        |
-| `openai/gpt-3.5`             | Nov 2022     |     8/8         |
-| `tiiuae/falcon-40b-instruct` | May 2023     |     8/8        |
-| `google/flan-t5-xxl`         | Sep 2021     |     4/8        |
-| `databricks/dolly-v2-12b`    | Apr 2023     |     z/8        |
+| `openai/gpt-4`               | Mar 2023     |     12/12       |
+| `openai/gpt-3.5`             | Nov 2022     |     12/12       |
+| `tiiuae/falcon-40b-instruct` | May 2023     |     8/12        |
+| `google/flan-t5-xxl`         | Sep 2021     |     4/12        |
 
 For each of the questions, points were allocated as follows:
 
@@ -154,6 +153,7 @@ Response #1 (formatted differently due to tabular nature of responses)
 |   2  | Rows of blue tulips     | Divide 24 by 8 (blue tulips/row)   |   3    |
 |   3  | Total rows of flowers   | Add the results from step 1 and 2  |   9    |
 
+`tiiuae/falcon-40b-instruct`'s response (✅):
 
 Response #2:
 
@@ -172,6 +172,11 @@ Response #1 (formatted differently due to tabular nature of responses)
 
 `openai/gpt-4`'s response (✅): 
 
+|Step|Subquestion|Procedure|Result|
+|:---|:----------|:--------|:-----|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|
 
 `openai/gpt-3.5`'s response (✅):
 
@@ -181,12 +186,15 @@ Response #1 (formatted differently due to tabular nature of responses)
 |   2  | Rows of blue tulips           | Divide 12 by 4 (blue tulips per row)          |   3    |
 |   3  | Total rows of flowers         | Add the results from step 1 and 2             |   9    |
 
+`tiiuae/falcon-40b-instruct`'s response (✅):
+
+
 Response #2:
 
 | model                      | correct | response             |
 |----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       |  |
-| `openai/gpt-3.5`             | ✅       |  |
+| `openai/gpt-4`               | ✅       | In the second example, Jackson will plant 9 total rows of flowers. |
+| `openai/gpt-3.5`             | ✅       | In Example 2, Jackson will also plant a total of 9 rows of flowers. |
 | `tiiuae/falcon-40b-instruct` |        | |
 | `google/flan-t5-xxl` |        |  |
 
