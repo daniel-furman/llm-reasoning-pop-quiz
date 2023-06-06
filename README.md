@@ -101,7 +101,7 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Amy can slide 3 times before the slide closes (15 minutes total / 5 minutes per slide). |
 | `openai/gpt-3.5`             | ✅       | Amy can slide down the slide 3 times before it closes. |
-| `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 3 times before the slide closes. (15 minutes / 5 minutes per trip = 3 trips) |
+| `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 15/5 = 3 times before the slide closes." |
 | `google/flan-t5-xxl` |  ❌     | She has 15 / 60 = 3 minutes left to slide. She can slide 3 / 3 = 2 times. The answer: 2. |
 
 <br>
