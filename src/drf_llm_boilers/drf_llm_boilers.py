@@ -3,7 +3,6 @@
 
 from typing import List
 import transformers
-import peft
 import torch
 import warnings
 
@@ -234,7 +233,6 @@ def flan(
         padding=True,
         truncation=True,
         return_tensors="pt",
-        return_token_type_ids=False,
     )
     inputs = inputs.to(device)
 
