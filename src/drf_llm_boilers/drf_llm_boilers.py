@@ -236,20 +236,19 @@ def flan(
     )
     inputs = inputs.to(device)
 
-    with torch.cuda.amp.autocast():
-        output_tokens = model.generate(
-            **inputs,
-            eos_token_id=eos_token_ids,
-            max_new_tokens=max_new_tokens,
-            do_sample=do_sample,
-            temperature=temperature,
-            top_p=top_p,
-            top_k=top_k,
-            num_return_sequences=num_return_sequences,
-            pad_token_id=tokenizer.eos_token_id,
-            bos_token_id=tokenizer.eos_token_id,
-            streamer=streamer,
-        )
+    output_tokens = model.generate(
+        **inputs,
+        eos_token_id=eos_token_ids,
+        max_new_tokens=max_new_tokens,
+        do_sample=do_sample,
+        temperature=temperature,
+        top_p=top_p,
+        top_k=top_k,
+        num_return_sequences=num_return_sequences,
+        pad_token_id=tokenizer.eos_token_id,
+        bos_token_id=tokenizer.eos_token_id,
+        streamer=streamer,
+    )
 
     if num_return_sequences == 1:
         generated_text = tokenizer.decode(output_tokens[0], skip_special_tokens=True)

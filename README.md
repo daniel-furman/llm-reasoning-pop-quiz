@@ -13,13 +13,14 @@
 | `openai/gpt-4`               | Mar 2023     |     8/8        |
 | `openai/gpt-3.5`             | Nov 2022     |     8/8         |
 | `tiiuae/falcon-40b-instruct` | May 2023     |     8/8        |
-| `dfurman/falcon-40b-chat-oasst1` | May 2023     |     x/8        |
 | `google/flan-t5-xxl`         | Sep 2021     |     y/8        |
 | `databricks/dolly-v2-12b`    | Apr 2023     |     z/8        |
 
+For each of the 8 questions, points were allocated as follows:
 
-
-**Table 1**: Overall quiz scores. For each question, the model gets a full point if both the reasoning and the answer are correct throughout the response and a half point if the answer is correct yet some of the reasoning is inaccurate. 
+* A full point was awarded if both the reasoning and the answer were correct throughout the response
+* A half point was awarded if the answer was correct but some of the reasoning was flawed
+* Zero points were awarded if the answer was incorrect
 
 <br>
 
