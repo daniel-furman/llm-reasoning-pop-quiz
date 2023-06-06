@@ -217,5 +217,5 @@ Response #2:
 | `openai/gpt-4`               | ✅       | In the second example, Jackson will plant 9 total rows of flowers. |
 | `openai/gpt-3.5`             | ✅       | In Example 2, Jackson will also plant a total of 9 rows of flowers. |
 | `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
-| `google/flan-t5-xxl` |    ✅    | |6 + 3 = 9 rows|. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
+| `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
 
