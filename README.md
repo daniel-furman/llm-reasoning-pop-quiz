@@ -16,7 +16,7 @@
 | `google/flan-t5-xxl`         | Sep 2021     |     4/8        |
 | `databricks/dolly-v2-12b`    | Apr 2023     |     z/8        |
 
-For each of the 8 questions, points were allocated as follows:
+For each of the questions, points were allocated as follows:
 
 * A full point was awarded if both the reasoning and the answer were correct throughout the response
 * A half point was awarded if the answer was correct but some of the reasoning was flawed
@@ -105,8 +105,6 @@ Response #2:
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 3 times before the slide closes. (15 minutes / 5 minutes per trip = 3 trips) |
 | `google/flan-t5-xxl` |  ❌     | She has 15 / 60 = 3 minutes left to slide. She can slide 3 / 3 = 2 times. The answer: 2. |
 
-
-
 <br>
 
 **3.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. Q: How long before he can start shopping? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. {insert response #1} The store closes in an hour. Q: Can he make to the store before it closes? A: Let's work this out in a step by step way to be sure we have the right answer. Respond as succinctly as possible to answer the question. {insert response #2}
@@ -131,6 +129,35 @@ Response #2:
 
 
 <br>
+
+### Section 4. Tab-CoT (Tabular Chain of Thought)
+
+* From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
+
+**4.1**. Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flower will he plant? Format the response as a completion of this table. \n\n |step|subquestion|procedure|result| {insert response #1}. Therefore, the answer is {insert response #2}.
+
+Response #1 (formatted differently due to tabular nature of responses)
+
+`openai/gpt-4`'s response (✅): 
+
+`openai/gpt-3.5`'s response (✅):
+
+| Step |       Subquestion        |             Procedure             | Result |
+|------|-------------------------|-----------------------------------|--------|
+|   1  | Rows of red tulips      | Divide 36 by 6 (red tulips/row)    |   6    |
+|   2  | Rows of blue tulips     | Divide 24 by 8 (blue tulips/row)   |   3    |
+|   3  | Total rows of flowers   | Add the results from step 1 and 2  |   9    |
+
+
+Response #2:
+
+| model                      | correct | response             |
+|----------------------|:---------:|--------------------------|
+| `openai/gpt-4`               | ✅       | |
+| `openai/gpt-3.5`             | ✅       | Therefore, the answer is that Jackson will plant a total of 9 rows of flowers. |
+| `tiiuae/falcon-40b-instruct` | ✅       | |
+| `google/flan-t5-xxl` |        |  |
+
 <br>
 
 ## Dev
