@@ -160,7 +160,7 @@ Response #1
 |7|How many rows of red tulips will Jackson plant?|4|
 |8|How many rows of flowers will Jackson plant in total?|6+2+4=12|
 
-`google/flan-t5-xxl`'s response (❌):
+`google/flan-t5-xxl`'s response (❌): <br>
 Step 1: How many red tulips will Jackson plant? Step 2: How many blue tulips will Jackson plant? Step 3: How many rows of flowers will Jackson plant?
 
 Response #2:
@@ -242,18 +242,8 @@ Response #1
 
 `tiiuae/falcon-40b-instruct`'s response (✅):
 
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
 
 `google/flan-t5-xxl`'s response (✅):
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows| 
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows| 
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
 
 
 Response #2:
@@ -262,8 +252,8 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Beverly Hills Bakery had 74 loaves of bread left. |
 | `openai/gpt-3.5`             | ❌       | Therefore, the answer is the Beverly Hills Bakery had 68 loaves of bread left. |
-| `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
-| `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
+| `tiiuae/falcon-40b-instruct` |        | |
+| `google/flan-t5-xxl` |        |  |
 
 
 
