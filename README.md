@@ -219,4 +219,54 @@ Response #2:
 | `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
 | `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
 
-**4.3**: Example 1: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|\n|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (36) by the number of red tulips per row (6).|36 / 6 = 6 rows|\n|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (24) by the number of blue tulips per row (8).|24 / 8 = 3 rows|\n|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. \nTherefore, the answer is Jackson will plant 9 total rows of flowers. Example 2:  The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left?\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|",
+**4.3**: Example 1: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|\n|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (36) by the number of red tulips per row (6).|36 / 6 = 6 rows|\n|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (24) by the number of blue tulips per row (8).|24 / 8 = 3 rows|\n|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. \nTherefore, the answer is Jackson will plant 9 total rows of flowers. Example 2:  The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
+
+Response #1
+
+`openai/gpt-4`'s response (✅): 
+
+|Step|Subquestion|Procedure|Result|
+|:---|:----------|:--------|:-----|
+|1|How many loaves of bread were sold in total?|Add the number of loaves sold in the morning (93) to the number of loaves sold in the afternoon (39).|93 + 39 = 132 loaves|
+|2|How many loaves of bread were returned by the grocery store?|The grocery store returned 6 loaves of bread.|6 loaves|
+|3|How many loaves of bread were left after the sales?|Subtract the total number of loaves sold (132) from the initial number of loaves baked (200).|200 - 132 = 68 loaves|
+|4|How many loaves of bread did they have left after returns?|Add the number of loaves returned (6) to the number of loaves left after sales (68).|68 + 6 = 74 loaves|.
+
+`openai/gpt-3.5`'s response (❌):
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1|How many loaves of bread did the Beverly Hills Bakery sell?|Add the number of loaves sold in the morning (93) to the number of loaves sold in the afternoon (39).|93 + 39 = 132 loaves|
+|2|How many loaves of bread were returned by the grocery store?|Subtract the number of returned loaves (6) from the total number of loaves sold (132).|132 - 6 = 126 loaves|
+|3|How many loaves of bread did the bakery have left?|Subtract the number of loaves sold (132) from the total number of loaves baked (200).|200 - 132 = 68 loaves|
+
+`tiiuae/falcon-40b-instruct`'s response (✅):
+
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
+
+`google/flan-t5-xxl`'s response (✅):
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows| 
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows| 
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
+
+
+Response #2:
+
+| model                      | correct | response             |
+|----------------------|:---------:|--------------------------|
+| `openai/gpt-4`               | ✅       | Beverly Hills Bakery had 74 loaves of bread left. |
+| `openai/gpt-3.5`             | ❌       | Therefore, the answer is the Beverly Hills Bakery had 68 loaves of bread left. |
+| `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
+| `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
+
+
+
+
+
+
