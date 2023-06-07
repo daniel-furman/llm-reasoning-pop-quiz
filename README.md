@@ -10,10 +10,10 @@
 
 | model                      | release date | quiz score |
 |----------------------------|--------------|:-------------:|
-| `openai/gpt-4`               | Mar 2023     |     12/12       |
-| `openai/gpt-3.5`             | Nov 2022     |     12/12       |
-| `tiiuae/falcon-40b-instruct` | May 2023     |     10/12       |
-| `google/flan-t5-xxl`         | Sep 2021     |     7/12        |
+| `openai/gpt-4`               | Mar 2023     |     14/14       |
+| `openai/gpt-3.5`             | Nov 2022     |     12/14       |
+| `tiiuae/falcon-40b-instruct` | May 2023     |     10/14       |
+| `google/flan-t5-xxl`         | Sep 2021     |     7/14        |
 
 <br>
 
@@ -123,7 +123,7 @@ Response #2:
 
 <br>
 
-### Section 4. Tab-CoT (Tabular Chain of Thought)
+### Section 4. Tabular Chain of Thought
 
 * From [https://arxiv.org/abs/2305.17812](https://arxiv.org/abs/2305.17812)
 
@@ -209,7 +209,6 @@ Response #1
 |2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows| 
 |3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
 
-
 Response #2:
 
 | model                      | correct | response             |
@@ -244,9 +243,20 @@ Response #1
 
 `tiiuae/falcon-40b-instruct`'s response (✅):
 
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:| 
+|1|How many loaves of bread did the bakery sell in the morning?|93|
+|2|How many loaves of bread did the bakery sell in the afternoon?|39|
+|3|How many loaves of bread did the bakery have left after the morning and afternoon sales?|200 - 93 - 39 = 68|
+|4|How many loaves of bread did the grocery store return?|6|
+|5|How many loaves of bread did the bakery have left after the grocery store returned the unsold loaves?|68 - 6 = 62|
+|6|How many loaves of bread did the bakery have left after the morning and afternoon sales and the grocery store returned the unsold loaves?|62|
 
-`google/flan-t5-xxl`'s response (✅):
+`google/flan-t5-xxl`'s response (❌):
 
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1|Total sales were 93 + 39 = 120 loaves.|200 - 120 = 80 loaves were left.|. Therefore, the answer is  80.
 
 Response #2:
 
@@ -254,8 +264,8 @@ Response #2:
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Beverly Hills Bakery had 74 loaves of bread left. |
 | `openai/gpt-3.5`             | ❌       | Therefore, the answer is the Beverly Hills Bakery had 68 loaves of bread left. |
-| `tiiuae/falcon-40b-instruct` |        | |
-| `google/flan-t5-xxl` |        |  |
+| `tiiuae/falcon-40b-instruct` | ❌       | The bakery had 62 loaves of bread left after the morning and afternoon sales and the grocery store returned the unsold loaves. |
+| `google/flan-t5-xxl` |   ❌     | 80. |
 
 
 
