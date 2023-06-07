@@ -241,7 +241,7 @@ Response #1
 |2|How many loaves of bread were returned by the grocery store?|Subtract the number of returned loaves (6) from the total number of loaves sold (132).|132 - 6 = 126 loaves|
 |3|How many loaves of bread did the bakery have left?|Subtract the number of loaves sold (132) from the total number of loaves baked (200).|200 - 132 = 68 loaves|
 
-`tiiuae/falcon-40b-instruct`'s response (✅):
+`tiiuae/falcon-40b-instruct`'s response (❌):
 
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:| 
