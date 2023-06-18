@@ -87,7 +87,6 @@ Response #1:
 | `openai/gpt-3.5`             | ✅       | Each trip takes 5 minutes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy climbs up the slide in 4 minutes, so it takes her 4 minutes to complete one trip. She slides down the slide in 1 minute, so it takes her 1 minute to complete one trip. Therefore, each trip takes 5 minutes." |
 | `google/flan-t5-xxl` |  ❌     | It takes Amy 4 / 1 = 3 minutes to slide down. So each trip takes 3 / 2 = 2 minutes. The answer: 2.
- |  
 
 Response #2:
 
