@@ -13,6 +13,7 @@
 | `openai/gpt-4`               | Mar 2023     |     14/14       |
 | `openai/gpt-3.5`             | Nov 2022     |     12/14       |
 | `tiiuae/falcon-40b-instruct` | May 2023     |     10/14       |
+| `mosaicml/mpt-30b-instruct`  | Jun 2023     |     8/14        |
 | `google/flan-t5-xxl`         | Sep 2021     |     7/14        |
 
 <br>
@@ -29,8 +30,9 @@
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Half of the 16 balls are golf balls, which is 8 balls. Half of these golf balls are blue, so there are 4 blue golf balls. |
 | `openai/gpt-3.5`             | ✅       | There are 4 blue golf balls.                                                                                              |
-| `tiiuae/falcon-40b-instruct` | ✅       | There are 8 golf balls in total. Half of the golf balls are blue, so there are 4 blue golf balls. |       
-| `google/flan-t5-xxl` | ✅       | The juggler has 16 golf balls * 1 / 2 = 8 golf balls. There are 8 golf balls * 0.5 = 4 blue golf balls. The answer: 4.  |        
+| `tiiuae/falcon-40b-instruct` | ✅       | There are 8 golf balls in total. Half of the golf balls are blue, so there are 4 blue golf balls. |    
+| `mosaicml/mpt-30b-instruct` | ❌       | There are 8 blue golf balls because 16 divided by 2 is 8 and 8 divided by 2 is 4 and 4 divided by 2 is 2. |     
+| `google/flan-t5-xxl` | ✅       | The juggler has 16 golf balls * 1 / 2 = 8 golf balls. There are 8 golf balls * 0.5 = 4 blue golf balls. The answer: 4.  |   
 
 <br>
 
@@ -41,7 +43,9 @@
 | `openai/gpt-4`               | ✅       | No, it doesn't make logical sense because Daniel's barber does not work on Sundays. |
 | `openai/gpt-3.5`             | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday because his barber works on Mondays, Wednesdays, and Fridays. |
 | `tiiuae/falcon-40b-instruct` | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday. His barber works on Mondays, Wednesdays, and Fridays, so Daniel should have waited until one of those days to get a haircut. |
+| `mosaicml/mpt-30b-instruct` | ✅       | No, it does not make logical sense for Daniel to get a haircut on Sunday because his barber only works on Mondays, Wednesdays, and Fridays. | 
 | `google/flan-t5-xxl` | ✅       | Daniel has to wait until the following week to get his haircut. The answer: no.  |        
+ 
 
 <br>
 
@@ -55,9 +59,9 @@
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | After using 20 apples for lunch, the cafeteria has 3 apples left. With the purchase of 6 more apples, they now have 9 apples. |
 | `openai/gpt-3.5`             | ✅       | The cafeteria now has 9 apples. |
-| `tiiuae/falcon-40b-instruct` | ✅       | The cafeteria started with 23 apples. They used 20 to make lunch, so they have 3 apples left. They bought 6 more, so they have 9 apples now. The answer is 9. |
-| `google/flan-t5-xxl` | ❌      | The cafeteria had 23 - 20 = 3 apples left after making lunch. They bought 6 + 3 = 7 apples. The answer is 7. |        
-
+| `tiiuae/falcon-40b-instruct` | ✅       | The cafeteria started with 23 apples. They used 20 to make lunch, so they have 3 apples left. They bought 6 more, so they have 9 apples now. The answer is 9. |  
+| `mosaicml/mpt-30b-instruct` | ✅       | They used 20 apples for lunch, leaving 23 - 20 = 3. They bought 6 more apples, leaving 3 + 6 = 9 apples. The answer is 9. |   
+| `google/flan-t5-xxl` | ❌      | The cafeteria had 23 - 20 = 3 apples left after making lunch. They bought 6 + 3 = 7 apples. The answer is 7. |     
 
 <br>
 
@@ -67,8 +71,10 @@
 |----------------------|:---------:|--------------------------|
 | `openai/gpt-4`               | ✅       | Ben has 4 children and 50% of them are in college and no longer live at home. Therefore, the other 50%, which is 2 children, still live at home. |
 | `openai/gpt-3.5`             | ✅       | Two of Ben's children still live at home. |
-| `tiiuae/falcon-40b-instruct` | ✅       | Ben has 4 children. 50% of his children are in college and no longer live at home. So, 2 of his children are in college. Therefore, 2 of his children still live at home. The answer is 2. |
-| `google/flan-t5-xxl` |  ✅     | Ben has 4 children and 50% of them are in college so that's 4 *.50 = 2 children. 2 children still live at home. The answer is  2. |       
+| `tiiuae/falcon-40b-instruct` | ✅       | Ben has 4 children. 50% of his children are in college and no longer live at home. So, 2 of his children are in college. Therefore, 2 of his children still live at home. The answer is 2. |   
+| `mosaicml/mpt-30b-instruct` | ✅       | First we need to know how many children still live at home. So we need to know how many children total used to live at home. That means we need to know how many children are in college. We are given that 50% of his children are in college, so we know that 50% * 4 = 2 children are in college. That means 4 - 2 = 2 children still live at home. The answer is 2. | 
+| `google/flan-t5-xxl` |  ✅     | Ben has 4 children and 50% of them are in college so that's 4 *.50 = 2 children. 2 children still live at home. The answer is  2. |      
+
 
 <br>
 
@@ -86,7 +92,8 @@ Response #1:
 | `openai/gpt-4`               | ✅       | Each trip takes Amy 5 minutes (4 minutes climbing + 1 minute sliding down). |
 | `openai/gpt-3.5`             | ✅       | Each trip takes 5 minutes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy climbs up the slide in 4 minutes, so it takes her 4 minutes to complete one trip. She slides down the slide in 1 minute, so it takes her 1 minute to complete one trip. Therefore, each trip takes 5 minutes." |
-| `google/flan-t5-xxl` |  ❌     | It takes Amy 4 / 1 = 3 minutes to slide down. So each trip takes 3 / 2 = 2 minutes. The answer: 2.
+| `mosaicml/mpt-30b-instruct` | ✅       | To climb up and slide down, Amy takes 4 + 1 = 5 minutes. To climb down and slide up, Amy takes 4 + 1 = 5 minutes. Since it doesn't matter if she climbs up first or slides up first, each trip takes 5 minutes. |  
+| `google/flan-t5-xxl` |  ❌     | It takes Amy 4 / 1 = 3 minutes to slide down. So each trip takes 3 / 2 = 2 minutes. The answer: 2. |
 
 Response #2:
 
@@ -95,6 +102,7 @@ Response #2:
 | `openai/gpt-4`               | ✅       | Amy can slide 3 times before the slide closes (15 minutes total / 5 minutes per slide). |
 | `openai/gpt-3.5`             | ✅       | Amy can slide down the slide 3 times before it closes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Amy can slide down the slide 15/5 = 3 times before the slide closes." |
+| `mosaicml/mpt-30b-instruct` | ✅       | Each trip takes 5 minutes and she has 15 minutes before the slide closes so she can make 15 / 5 = 3 trips. |  
 | `google/flan-t5-xxl` |  ❌     | She has 15 / 60 = 3 minutes left to slide. She can slide 3 / 3 = 2 times. The answer: 2. |
 
 <br>
@@ -108,6 +116,7 @@ Response #1:
 | `openai/gpt-4`               | ✅       | It takes Ben a total of 14 minutes (10 minutes driving + 4 minutes parking) to start shopping. |
 | `openai/gpt-3.5`             | ✅       | Ben takes 14 minutes before he can start shopping. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben takes 10 minutes to drive to the store. He then takes 4 minutes to find parking. Therefore, it takes Ben 14 minutes to get to the store and find parking. Once he finds parking, he can start shopping. |
+| `mosaicml/mpt-30b-instruct` | ✅       | He spends 10 + 4 = 14 minutes in total driving and finding parking. He can start shopping in 60 - 14 = 46 minutes. |  
 | `google/flan-t5-xxl` |  ✅      | It takes Ben 10 + 4 = 14 minutes to start shopping. The answer: 14. |
 
 Response #2:
@@ -117,8 +126,8 @@ Response #2:
 | `openai/gpt-4`               | ✅       | Yes, Ben can make it to the store before it closes since it only takes him 14 minutes to get there and start shopping, and the store closes in an hour. |
 | `openai/gpt-3.5`             | ✅       | Yes, Ben can make it to the store before it closes. He has 46 minutes remaining before the store closes. |
 | `tiiuae/falcon-40b-instruct` | ✅       | Ben has 46 minutes to shop before the store closes. He can make it to the store before it closes. |
+| `mosaicml/mpt-30b-instruct` | ❌       | He has 60 - 46 = 14 minutes to shop before the store closes. He can shop for 14 / 10 = 1.4 units of time before the store closes. The store is open for 60 / 60 = 1 unit of time. So he has 1.4 / 1 = 1.4 times the amount of time available to shop before the store closes.|  
 | `google/flan-t5-xxl` |  ❌      | He has 60 minutes to get to the store. The answer: 60. |
-
 
 <br>
 
@@ -159,6 +168,9 @@ Response #1
 |7|How many rows of red tulips will Jackson plant?|4|
 |8|How many rows of flowers will Jackson plant in total?|6+2+4=12|
 
+`mosaicml/mpt-30b-instruct`'s response (❌): <br>
+First find the total number of tulips Jackson buys, which is $36 + 24 = 60$. Then divide the total number of tulips by the average number of tulips per row, which is $(6 + 8)/2 = 7$. This yields $60/7 = 8$ rows of flowers.
+
 `google/flan-t5-xxl`'s response (❌): <br>
 Step 1: How many red tulips will Jackson plant? Step 2: How many blue tulips will Jackson plant? Step 3: How many rows of flowers will Jackson plant?
 
@@ -169,6 +181,7 @@ Response #2:
 | `openai/gpt-4`               | ✅       | Jackson will plant 9 total rows of flowers. |
 | `openai/gpt-3.5`             | ✅       | Therefore, the answer is that Jackson will plant a total of 9 rows of flowers. |
 | `tiiuae/falcon-40b-instruct` | ❌       | Text generation: "12."|
+| `mosaicml/mpt-30b-instruct` | ❌       | 8 |  
 | `google/flan-t5-xxl` |   ✅     | 36 red tulips / 6 red tulips / row = 6 red tulips / row. 24 blue tulips / 8 blue tulips / row = 3 blue tulips / row. 6 red tulips / row + 3 blue tulips / row = 9 rows of flowers. |
 
 <br>
@@ -201,6 +214,13 @@ Response #1
 |2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
 |3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
 
+`mosaicml/mpt-30b-instruct`'s response (✅): <br>
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
+|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
+|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
+
 `google/flan-t5-xxl`'s response (✅):
 | Step |         Subquestion            |             Procedure                        | Result |
 |------|-------------------------------|----------------------------------------------|--------|
@@ -215,6 +235,7 @@ Response #2:
 | `openai/gpt-4`               | ✅       | In the second example, Jackson will plant 9 total rows of flowers. |
 | `openai/gpt-3.5`             | ✅       | In Example 2, Jackson will also plant a total of 9 rows of flowers. |
 | `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
+| `mosaicml/mpt-30b-instruct` | ✅        | Jackson will plant 9 total rows of flowers. |  
 | `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
 
 <br>
@@ -251,6 +272,13 @@ Response #1
 |5|How many loaves of bread did the bakery have left after the grocery store returned the unsold loaves?|68 - 6 = 62|
 |6|How many loaves of bread did the bakery have left after the morning and afternoon sales and the grocery store returned the unsold loaves?|62|
 
+`mosaicml/mpt-30b-instruct`'s response (❌): <br>
+| Step |         Subquestion            |             Procedure                        | Result |
+|------|-------------------------------|----------------------------------------------|--------|
+|1|How many loaves of bread did the bakery sell in the morning?|The bakery sold 93 loaves in the morning + 39 loaves in the afternoon + 6 unsold loaves returned by a grocery store, which is a total of 140 loaves sold.|140 loaves sold|
+|2|How many loaves of bread did the bakery have left after the morning sales?|There were 200 loaves of bread baked – 140 loaves sold in the morning and afternoon, which leaves 60 loaves of bread.|60 loaves of bread left|
+|3|How many loaves of bread did the bakery have after the grocery store returned the unsold loaves?|The bakery had 60 loaves of bread left + 6 unsold loaves returned by a grocery store, which is a total of 66 loaves of bread.|66 loaves of bread|
+
 `google/flan-t5-xxl`'s response (❌):
 
 |step|subquestion|procedure|result|
@@ -264,10 +292,7 @@ Response #2:
 | `openai/gpt-4`               | ✅       | Beverly Hills Bakery had 74 loaves of bread left. |
 | `openai/gpt-3.5`             | ❌       | Therefore, the answer is the Beverly Hills Bakery had 68 loaves of bread left. |
 | `tiiuae/falcon-40b-instruct` | ❌       | The bakery had 62 loaves of bread left after the morning and afternoon sales and the grocery store returned the unsold loaves. |
+| `mosaicml/mpt-30b-instruct` | ❌        | The bakery sold 93 + 39 + 6 = 140 loaves in total. There were 200 - 140 = 60 loaves left after the morning sales. There are 60 + 6 = 66 loaves of bread in total. |  
 | `google/flan-t5-xxl` |   ❌     | 80. |
-
-
-
-
 
 
