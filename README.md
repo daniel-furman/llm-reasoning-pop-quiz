@@ -8,13 +8,20 @@
 
 ## Test Leaderboard
 
-| model                      | release date | quiz score |
-|----------------------------|--------------|:-------------:|
-| `openai/gpt-4`               | Mar 2023     |     14/14       |
-| `openai/gpt-3.5`             | Nov 2022     |     12/14       |
-| `tiiuae/falcon-40b-instruct` | May 2023     |     10/14       |
-| `mosaicml/mpt-30b-instruct`  | Jun 2023     |     8/14        |
-| `google/flan-t5-xxl`         | Sep 2021     |     7/14        |
+| model                                | release date | quiz score |
+|--------------------------------------|--------------|:-------------:|
+| `openai/gpt-4`                       | Mar 2023     |     14/14       |
+| `openai/gpt-3.5`                     | Nov 2022     |     12/14       |
+| `tiiuae/falcon-40b-instruct`         | May 2023     |     10/14       |
+| `mosaicml/mpt-30b-instruct`          | Jun 2023     |     8/14        |
+| `google/flan-t5-xxl`                 | Sep 2021     |     7/14        |
+| `anthropic/claude-2`                 | xx     |     xx        |
+| `mistralai/Mistral-7B-Instruct-v0.1` | xx     |     xx        |
+| `meta-llama/Llama-2-70b-chat-hf`     | xx     |     xx        |
+| `meta-llama/Llama-2-13b-chat-hf`     | xx     |     xx        |
+| `meta-llama/Llama-2-7b-chat-hf`      | xx     |     xx        |
+
+
 
 <br>
 
@@ -32,7 +39,8 @@
 | `openai/gpt-3.5`             | ✅       | There are 4 blue golf balls.                                                                                              |
 | `tiiuae/falcon-40b-instruct` | ✅       | There are 8 golf balls in total. Half of the golf balls are blue, so there are 4 blue golf balls. |    
 | `mosaicml/mpt-30b-instruct` | ❌       | There are 8 blue golf balls because 16 divided by 2 is 8 and 8 divided by 2 is 4 and 4 divided by 2 is 2. |     
-| `google/flan-t5-xxl` | ✅       | The juggler has 16 golf balls * 1 / 2 = 8 golf balls. There are 8 golf balls * 0.5 = 4 blue golf balls. The answer: 4.  |   
+| `google/flan-t5-xxl` | ✅       | The juggler has 16 golf balls * 1 / 2 = 8 golf balls. There are 8 golf balls * 0.5 = 4 blue golf balls. The answer: 4.  | 
+| `anthropic/claude-2` | ✅       | A juggler has 16 balls. Half of the 16 balls are golf balls, so there are 16/2 = 8 golf balls. Half of the 8 golf balls are blue, so there are 8/2 = 4 blue golf balls. Therefore, the number of blue golf balls is 4. | 
 
 <br>
 
@@ -44,7 +52,9 @@
 | `openai/gpt-3.5`             | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday because his barber works on Mondays, Wednesdays, and Fridays. |
 | `tiiuae/falcon-40b-instruct` | ✅       | No, it does not make logical sense for Daniel to go in for a haircut on Sunday. His barber works on Mondays, Wednesdays, and Fridays, so Daniel should have waited until one of those days to get a haircut. |
 | `mosaicml/mpt-30b-instruct` | ✅       | No, it does not make logical sense for Daniel to get a haircut on Sunday because his barber only works on Mondays, Wednesdays, and Fridays. | 
-| `google/flan-t5-xxl` | ✅       | Daniel has to wait until the following week to get his haircut. The answer: no.  |        
+| `google/flan-t5-xxl` | ✅       | Daniel has to wait until the following week to get his haircut. The answer: no.  |   
+| `anthropic/claude-2` | ✅       | Daniel needs a haircut. His barber works Mondays, Wednesdays, and Fridays
+Daniel went for a haircut on Sunday. The barber does not work on Sundays. Therefore, it does not logically follow that Daniel went for a haircut on a day when his barber was not working. So no, this does not make logical sense. In summary, no, this scenario does not make logical sense, since Daniel went for a haircut on a day when his barber was not working. |      
  
 
 <br>
@@ -183,116 +193,3 @@ Response #2:
 | `tiiuae/falcon-40b-instruct` | ❌       | Text generation: "12."|
 | `mosaicml/mpt-30b-instruct` | ❌       | 8 |  
 | `google/flan-t5-xxl` |   ✅     | 36 red tulips / 6 red tulips / row = 6 red tulips / row. 24 blue tulips / 8 blue tulips / row = 3 blue tulips / row. 6 red tulips / row + 3 blue tulips / row = 9 rows of flowers. |
-
-<br>
-
-**4.2**: Example 1: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|\n|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (36) by the number of red tulips per row (6).|36 / 6 = 6 rows|\n|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (24) by the number of blue tulips per row (8).|24 / 8 = 3 rows|\n|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. \nTherefore, the answer is Jackson will plant 9 total rows of flowers. Example 2:  Jackson is planting tulips. He can fit 3 red tulips in a row and 4 blue tulips in a row. If Jackson buys 18 red tulips and 12 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
-
-Response #1
-
-`openai/gpt-4`'s response (✅): 
-
-|Step|Subquestion|Procedure|Result|
-|:---|:----------|:--------|:-----|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|
-
-`openai/gpt-3.5`'s response (✅):
-
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|   1  | Rows of red tulips            | Divide 18 by 3 (red tulips per row)           |   6    |
-|   2  | Rows of blue tulips           | Divide 12 by 4 (blue tulips per row)          |   3    |
-|   3  | Total rows of flowers         | Add the results from step 1 and 2             |   9    |
-
-`tiiuae/falcon-40b-instruct`'s response (✅):
-
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
-
-`mosaicml/mpt-30b-instruct`'s response (✅): <br>
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows|
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows|
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. 
-
-`google/flan-t5-xxl`'s response (✅):
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (18) by the number of red tulips per row (3).|18 / 3 = 6 rows| 
-|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (12) by the number of blue tulips per row (4).|12 / 4 = 3 rows| 
-|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
-
-Response #2:
-
-| model                      | correct | response             |
-|----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       | In the second example, Jackson will plant 9 total rows of flowers. |
-| `openai/gpt-3.5`             | ✅       | In Example 2, Jackson will also plant a total of 9 rows of flowers. |
-| `tiiuae/falcon-40b-instruct` |  ✅      | Jackson will plant 9 total rows of flowers. |
-| `mosaicml/mpt-30b-instruct` | ✅        | Jackson will plant 9 total rows of flowers. |  
-| `google/flan-t5-xxl` |    ✅    | 6 + 3 = 9 rows. Therefore, the answer is Jackson will plant 9 total rows of flowers. |
-
-<br>
-
-**4.3**: Example 1: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|\n|1|How many rows of red tulips will Jackson plant?|Divide the total number of red tulips (36) by the number of red tulips per row (6).|36 / 6 = 6 rows|\n|2|How many rows of blue tulips will Jackson plant?|Divide the total number of blue tulips (24) by the number of blue tulips per row (8).|24 / 8 = 3 rows|\n|3|How many total rows of flowers will Jackson plant?|Add the number of rows of red tulips (6) to the number of rows of blue tulips (3).|6 + 3 = 9 rows|. \nTherefore, the answer is Jackson will plant 9 total rows of flowers. Example 2:  The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| {insert response #1}. \nTherefore, the answer is {insert response #2}.
-
-Response #1
-
-`openai/gpt-4`'s response (✅): 
-
-|Step|Subquestion|Procedure|Result|
-|:---|:----------|:--------|:-----|
-|1|How many loaves of bread were sold in total?|Add the number of loaves sold in the morning (93) to the number of loaves sold in the afternoon (39).|93 + 39 = 132 loaves|
-|2|How many loaves of bread were returned by the grocery store?|The grocery store returned 6 loaves of bread.|6 loaves|
-|3|How many loaves of bread were left after the sales?|Subtract the total number of loaves sold (132) from the initial number of loaves baked (200).|200 - 132 = 68 loaves|
-|4|How many loaves of bread did they have left after returns?|Add the number of loaves returned (6) to the number of loaves left after sales (68).|68 + 6 = 74 loaves|.
-
-`openai/gpt-3.5`'s response (❌):
-
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|
-|1|How many loaves of bread did the Beverly Hills Bakery sell?|Add the number of loaves sold in the morning (93) to the number of loaves sold in the afternoon (39).|93 + 39 = 132 loaves|
-|2|How many loaves of bread were returned by the grocery store?|Subtract the number of returned loaves (6) from the total number of loaves sold (132).|132 - 6 = 126 loaves|
-|3|How many loaves of bread did the bakery have left?|Subtract the number of loaves sold (132) from the total number of loaves baked (200).|200 - 132 = 68 loaves|
-
-`tiiuae/falcon-40b-instruct`'s response (❌):
-
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:| 
-|1|How many loaves of bread did the bakery sell in the morning?|93|
-|2|How many loaves of bread did the bakery sell in the afternoon?|39|
-|3|How many loaves of bread did the bakery have left after the morning and afternoon sales?|200 - 93 - 39 = 68|
-|4|How many loaves of bread did the grocery store return?|6|
-|5|How many loaves of bread did the bakery have left after the grocery store returned the unsold loaves?|68 - 6 = 62|
-|6|How many loaves of bread did the bakery have left after the morning and afternoon sales and the grocery store returned the unsold loaves?|62|
-
-`mosaicml/mpt-30b-instruct`'s response (❌): <br>
-| Step |         Subquestion            |             Procedure                        | Result |
-|------|-------------------------------|----------------------------------------------|--------|
-|1|How many loaves of bread did the bakery sell in the morning?|The bakery sold 93 loaves in the morning + 39 loaves in the afternoon + 6 unsold loaves returned by a grocery store, which is a total of 140 loaves sold.|140 loaves sold|
-|2|How many loaves of bread did the bakery have left after the morning sales?|There were 200 loaves of bread baked – 140 loaves sold in the morning and afternoon, which leaves 60 loaves of bread.|60 loaves of bread left|
-|3|How many loaves of bread did the bakery have after the grocery store returned the unsold loaves?|The bakery had 60 loaves of bread left + 6 unsold loaves returned by a grocery store, which is a total of 66 loaves of bread.|66 loaves of bread|
-
-`google/flan-t5-xxl`'s response (❌):
-
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|
-|1|Total sales were 93 + 39 = 120 loaves.|200 - 120 = 80 loaves were left.|. Therefore, the answer is  80.
-
-Response #2:
-
-| model                      | correct | response             |
-|----------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | ✅       | Beverly Hills Bakery had 74 loaves of bread left. |
-| `openai/gpt-3.5`             | ❌       | Therefore, the answer is the Beverly Hills Bakery had 68 loaves of bread left. |
-| `tiiuae/falcon-40b-instruct` | ❌       | The bakery had 62 loaves of bread left after the morning and afternoon sales and the grocery store returned the unsold loaves. |
-| `mosaicml/mpt-30b-instruct` | ❌        | The bakery sold 93 + 39 + 6 = 140 loaves in total. There were 200 - 140 = 60 loaves left after the morning sales. There are 60 + 6 = 66 loaves of bread in total. |  
-| `google/flan-t5-xxl` |   ❌     | 80. |
-
-
