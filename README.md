@@ -53,8 +53,8 @@
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br />The answer is 9.| |
+| `anthropic/claude-2`         | Okay, let's break this down:<br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /> The cafeteria now has 9 apples.| ✔ |
 
 <br>
 
