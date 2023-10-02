@@ -53,7 +53,7 @@
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br />The answer is 9.| ✔ |
+| `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br /><br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br /><br />The answer is 9.| ✔ |
 | `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /><br />The cafeteria now has 9 apples.| ✔ |
 
 <br>
@@ -62,7 +62,7 @@
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | Ben has 4 children. If 50% of them are in college and no longer live at home, then:<br />50/100 * 4 = 2 of his children are in college and do not live at home.<br />So, the number of Ben's children that still live at home is:<br />4 (total children) - 2 (children in college) = 2.<br />The answer is 2.| ✔ |
+| `openai/gpt-4`               | Ben has 4 children. If 50% of them are in college and no longer live at home, then:<br /><br />50/100 * 4 = 2 of his children are in college and do not live at home.<br />So, the number of Ben's children that still live at home is:<br />4 (total children) - 2 (children in college) = 2.<br /><br />The answer is 2.| ✔ |
 | `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • Ben has 4 children total<br /> • 50% of his children are in college and don't live at home<br /> • To find 50% of something, we divide by 2<br /> • So 50% of 4 children is 4 / 2 = 2 children<br /> • That means 2 of Ben's children are away in college<br /> • So the number of children still living at home is 4 - 2 = 2<br /><br />Therefore, the number of Ben's children who still live at home is 2.| ✔ |
 <br>
 
