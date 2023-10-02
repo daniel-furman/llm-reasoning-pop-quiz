@@ -27,7 +27,7 @@
 
 ## Questions with Answers
 
-### Section 1. Zero-shot reasoning conditioned on good performance
+### Section 1. CoT reasoning zero-shot
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
 
@@ -49,16 +49,7 @@
 
 <br>
 
-**1.3** Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
-
-| model                        | response             | correct   |
-|------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
-
-<br>
-
-### Section 2. Chain-of-thought reasoning with few-shot examples
+### Section 2. CoT reasoning with few-shot examples
 
 * From [https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html](https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html)
 
@@ -139,3 +130,21 @@ Response #2:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
+
+**4.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
+
+Response #1
+
+`openai/gpt-4`'s response (): 
+
+`anthropic/claude-2`'s response (): 
+
+
+Response #2:
+
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
+| `openai/gpt-4`               | | |
+| `anthropic/claude-2`         | | |
+
+
