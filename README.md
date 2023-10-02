@@ -12,12 +12,7 @@
 |--------------------------------------|--------------|:-------------:|--------------|
 | `openai/gpt-4`                       | Mar 2023     |     8/8       | 10.01.2023   |
 | `anthropic/claude-2`                 | Jul 2023     |     7/8       | 10.01.2023   |
-| `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |     xx       |
-| `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |     xx       |
-| `meta/llama-2-70b-chat`              | Jul 2023     |     xx        |     xx       |
-| `meta/llama-2-13b-chat`              | Jul 2023     |     xx        |     xx       |
-| `meta/llama-2-7b-chat`               | Jul 2023     |     xx        |     xx       |
-| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |     xx        |     xx       |
+| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |     7/8       | 10.01.2023   |
 
 <br>
 
@@ -33,6 +28,7 @@
 |------------------------------|-----------------------|:---------:|
 | `openai/gpt-4`               | 1. Half of the 16 balls are golf balls: $\( \frac{16}{2} = 8 \)$ golf balls.<br /> 2. Half of the golf balls are blue: $\( \frac{8}{2} = 4 \)$ blue golf balls.| ✔ |
 | `anthropic/claude-2`         | • 16 total balls<br /> • Half are golf balls: 8<br /> • Half of those are blue: 4<br /> • So there are 4 blue golf balls.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1`         | Let's break down the information given:<br />1. There are 16 balls in total.<br />2. Half of the balls are golf balls.<br />3. Half of the golf balls are blue.<br /><br />Now let's apply this logic:<br />1. We know that half of the balls are golf balls, so there are 16 / 2 = 8 golf balls.<br />2. Half of these golf balls are blue, so there are 8 / 2 = 4 blue golf balls.<br /><br />Final answer: There are 4 blue golf balls. | ✔ |
 
 <br>
 
@@ -42,6 +38,9 @@
 |------------------------------|-----------------------|:---------:|
 | `openai/gpt-4`               | No, it does not make logical sense for Daniel to go in for a haircut on Sunday when his barber works on Mondays, Wednesdays, and Fridays.| ✔ |
 | `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | No, this does not make logical sense. Daniel's barber works on Mondays, Wednesdays, and Fridays, so he would not be available on Sunday for a haircut. Daniel would need to go to the barber on one of those days. | ✔ |
+
+
 
 <br>
 
@@ -55,6 +54,7 @@
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br /><br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br /><br />The answer is 9.| ✔ |
 | `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /><br />The cafeteria now has 9 apples.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | The cafeteria started with 23 apples. They used 20 to make lunch, leaving 3 apples. Then they bought 6 more apples, bringing their total to 9 apples. The answer is 9. | ✔ |
 
 <br>
 
@@ -64,6 +64,8 @@
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | Ben has 4 children. If 50% of them are in college and no longer live at home, then:<br /><br />50/100 * 4 = 2 of his children are in college and do not live at home.<br />So, the number of Ben's children that still live at home is:<br />4 (total children) - 2 (children in college) = 2.<br /><br />The answer is 2.| ✔ |
 | `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • Ben has 4 children total<br /> • 50% of his children are in college and don't live at home<br /> • To find 50% of something, we divide by 2<br /> • So 50% of 4 children is 4 / 2 = 2 children<br /> • That means 2 of Ben's children are away in college<br /> • So the number of children still living at home is 4 - 2 = 2<br /><br />Therefore, the number of Ben's children who still live at home is 2.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | 50% of Ben's children are in college and no longer live at home. Therefore, 50% of 4 children still live at home. 0.5 * 4 = 2. So, 2 of Ben's children still live at home. The answer is 2. | ✔ |
+
 <br>
 
 ### Section 3. Least to most prompting
@@ -79,6 +81,8 @@ Response #1:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Each trip (climbing up and sliding down) for Amy takes a total of 5 minutes (4 minutes to climb up + 1 minute to slide down).| ✔ |
 | `anthropic/claude-2`         | • Amy takes 4 minutes to climb up the slide<br /> • She takes 1 minute to slide down<br /> • So each trip up and down takes 4 + 1 = 5 minutes<br /> • Therefore, each trip takes 5 minutes. | ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | Each trip takes 5 minutes. | ✔ |
+She can slide 3 times before it closes.
 
 Response #2:
 
@@ -86,6 +90,7 @@ Response #2:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Amy takes 5 minutes for one complete cycle of climbing up and sliding down. If the slide closes in 15 minutes, she can make $\(\frac{15}{5} = 3\)$ trips before it closes.| ✔ |
 | `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • It takes Amy 5 minutes for each trip up and down the slide<br /> • The slide closes in 15 minutes<br /> • To figure out how many full trips Amy can take, we divide the total time by the time per trip:<br /> • 15 minutes / 5 minutes per trip = 3 trip<br /><br />Therefore, if the slide closes in 15 minutes, Amy can slide 3 times before it closes.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | She can slide 3 times before it closes. | ✔ |
 
 <br>
 
@@ -97,6 +102,8 @@ Response #1:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Ben takes 10 minutes to drive to the store and an additional 4 minutes to find parking, so before he can start shopping it takes him a total of 10 minutes + 4 minutes = 14 minutes. | ✔ |
 | `anthropic/claude-2`         | • Ben takes 10 minutes to drive to the store<br /> • He then takes 4 minutes to find parking<br /> • So the total time before he can start shopping is 10 + 4 = 14 minutes<br /><br />Therefore, the total time before Ben can start shopping is 14 minutes.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | Ben needs to wait 14 minutes before he can start shopping.
+ | ✔ |
 
 Response #2:
 
@@ -104,6 +111,7 @@ Response #2:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Yes, if Ben takes 14 minutes to get to the store and start shopping, he will make it before the store closes, as an hour (60 minutes) is sufficient time for this journey. | ✔ |
 | `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • It takes Ben 14 minutes total before he can start shopping (10 minutes to drive + 4 minutes to park)<br /> •The store closes in 1 hour<br /> • So Ben has 1 hour - 14 minutes = 46 minutes to shop before the store closes<br /><br />Since Ben has 46 minutes to shop before the store closes, and it only took him 14 minutes to get there, yes he can make it to the store before it closes.| ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | Yes, Ben can make it to the store before it closes. | ✔ |
 
 <br>
 
@@ -139,6 +147,14 @@ Here is the step-by-step solution:
 
 Therefore, the total number of rows Jackson will plant is 9.
 
+`mistralai/mistral-7b-instruct-v0.1` (✔️): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1.|How many rows of red tulips can Jackson plant?|Divide the number of red tulips by the number of red tulips per row.|36/6 = 6 rows of red tulips.|
+|2.|How many rows of blue tulips can Jackson plant?|Divide the number of blue tulips by the number of blue tulips per row.|24/8 = 3 rows of blue tulips.|
+|3.|How many rows of flowers can Jackson plant in total?|Add the number of rows of red tulips and blue tulips.|6 + 3 = 9 rows of flowers.|
+
 **4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
 `openai/gpt-4` (✔️): 
@@ -172,3 +188,13 @@ A: Here is the completed table showing the steps to solve this math word problem
 |5|How many loaves were sold total?|Morning sales + afternoon sales|93 + 39 = 132 loaves
 |6|How many baked loaves remain?|Original loaves - sold loaves - returned loaves|200 - 132 - 6 = 62 loaves
 
+`mistralai/mistral-7b-instruct-v0.1` (ⅹ): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1.|How many loaves of bread did the bakery have initially?|The bakery baked 200 loaves on Monday morning.|200|
+|2.|How many loaves of bread did the bakery sell in the morning?|The bakery sold 93 loaves in the morning.|93|
+|3.|How many loaves of bread did the bakery sell in the afternoon?|The bakery sold 39 loaves in the afternoon.|39|
+|4.|How many loaves of bread did the bakery have left after selling in the morning and afternoon?|The bakery had 93 + 39 = 132 loaves left after selling in the morning and afternoon.|132|
+|5.|How many loaves of bread did the grocery store return?|The grocery store returned 6 unsold loaves back to the bakery.|6|
+|6.|How many loaves of bread did the bakery have left after the grocery store returned?|The bakery had 132 - 6 = 126 loaves left after the grocery store returned.|126|"
