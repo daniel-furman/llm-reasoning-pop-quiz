@@ -141,14 +141,30 @@ Therefore, the total number of rows Jackson will plant is 9.
 
 `openai/gpt-4` (✔️): 
 
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|
-|1|How many loaves were sold in the morning?|Given in problem statement|93|
-|2|How many loaves were sold in the afternoon?|Given in problem statement|39|
-|3|How many loaves were sold in total on Monday?|Add results from step 1 and 2|132|
-|4|How many unsold loaves were returned?|Given in problem statement|6|
-|5|How many loaves were left after all sales, before returns?|Subtract result from step 3 from initial 200|68|
-|6|How many loaves were left after returns were added back?|Add results from step 4 and 5|74|
+Here's the solution step by step in the requested table format:
+
+\[
+\begin{array}{|l|l|l|r|}
+\hline
+\text{step} & \text{subquestion} & \text{procedure} & \text{result} \\
+\hline
+1 & \text{How many loaves were sold in total?} & 93 \text{ (morning) } + 39 \text{ (afternoon)} & 132 \\
+\hline
+2 & \text{How many loaves were left after sales?} & 200 \text{ (baked) } - 132 \text{ (sold)} & 68 \\
+\hline
+3 & \text{How many loaves were returned?} & \text{Add the returned loaves} & 6 \\
+\hline
+4 & \text{Final total of loaves left?} & 68 \text{ (after sales) } + 6 \text{ (returned)} & 74 \\
+\hline
+\end{array}
+\]
+
+Explanation:
+
+- Step 1: Find out the total number of loaves sold by adding the morning and afternoon sales together: \(93 + 39 = 132\) loaves.
+- Step 2: Find out the number of loaves remaining after all were sold by subtracting the number sold from the number baked: \(200 - 132 = 68\) loaves.
+- Step 3: Identify the number of loaves returned to the bakery: 6 loaves.
+- Step 4: Add the number of loaves returned to the remaining number after sales to get the final total of loaves left in the bakery: \(68 + 6 = 74\) loaves.
 
 `anthropic/claude-2` (ⅹ): 
 
