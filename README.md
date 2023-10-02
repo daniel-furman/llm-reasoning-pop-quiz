@@ -10,8 +10,8 @@
 
 | model                                | release date | quiz score    | test date    | 
 |--------------------------------------|--------------|:-------------:|--------------|
-| `openai/gpt-4`                       | Mar 2023     |     8/8       | 10/01/2023   |
-| `anthropic/claude-2`                 | Jul 2023     |     7/8       | 10/01/2023   |
+| `openai/gpt-4`                       | Mar 2023     |     8/8       | 10.01.2023   |
+| `anthropic/claude-2`                 | Jul 2023     |     7/8       | 10.01.2023   |
 | `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |     xx       |
 | `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |     xx       |
 | `meta/llama-2-70b-chat`              | Jul 2023     |     xx        |     xx       |
