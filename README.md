@@ -10,8 +10,8 @@
 
 | model                                | release date | quiz score |
 |--------------------------------------|--------------|:-------------:|
-| `openai/gpt-4`                       | Mar 2023     |     xx        |
-| `anthropic/claude-2`                 | Jul 2023     |     xx        |
+| `openai/gpt-4`                       | Mar 2023     |     8/8       |
+| `anthropic/claude-2`                 | Jul 2023     |     8/8       |
 | `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |
 | `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |
 | `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023     |     xx        |
@@ -77,14 +77,14 @@ Response #1:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
+| `openai/gpt-4`               | A: Each trip (climbing up and sliding down) for Amy takes a total of 5 minutes (4 minutes to climb up + 1 minute to slide down).| ✔ |
 | `anthropic/claude-2`         | • Amy takes 4 minutes to climb up the slide<br /> • She takes 1 minute to slide down<br /> • So each trip up and down takes 4 + 1 = 5 minutes<br /> • Therefore, each trip takes 5 minutes. | ✔ |
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
+| `openai/gpt-4`               | A: Amy takes 5 minutes for one complete cycle of climbing up and sliding down. If the slide closes in 15 minutes, she can make $\(\frac{15}{5} = 3\)$ trips before it closes.| ✔ |
 | `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • It takes Amy 5 minutes for each trip up and down the slide<br /> • The slide closes in 15 minutes<br /> • To figure out how many full trips Amy can take, we divide the total time by the time per trip:<br /> • 15 minutes / 5 minutes per trip = 3 trip<br /><br />Therefore, if the slide closes in 15 minutes, Amy can slide 3 times before it closes.| ✔ |
 
 <br>
