@@ -115,14 +115,13 @@ Response #2:
 
 * From [https://arxiv.org/abs/2305.17812](https://arxiv.org/abs/2305.17812)
 
-**4.1**: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
+**4.1**: Q: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
 
 Response #1
 
 `openai/gpt-4`'s response (): 
 
 `anthropic/claude-2`'s response (): 
-
 
 Response #2:
 
@@ -131,13 +130,17 @@ Response #2:
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
-**4.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
+**4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves, meaning they were added back to the total. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
 
 Response #1
 
 `openai/gpt-4`'s response (): 
 
 `anthropic/claude-2`'s response (): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+
 
 
 Response #2:
