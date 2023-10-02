@@ -115,11 +115,13 @@ Response #2:
 
 `openai/gpt-4` (✔️): 
 
+
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:|
 |1|How many rows will the red tulips make?|Divide total red tulips (36) by red tulips per row (6)|6|
 |2|How many rows will the blue tulips make?|Divide total blue tulips (24) by blue tulips per row (8)|3|
 |3|How many total rows of tulips will there be?|Add results from step 1 and 2|9|
+
 
 `anthropic/claude-2` (✔️): 
 
