@@ -42,17 +42,17 @@
 
 **1.2** Q: Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
-| `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| model                        |  response             | correct  |
+|------------------------------|-----------------------|:---------:|
+| `openai/gpt-4`               | No, it does not make logical sense for Daniel to go in for a haircut on Sunday when his barber works on Mondays, Wednesdays, and Fridays.| ✔ |
+| `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
 
 <br>
 
 **1.3** Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
@@ -64,8 +64,8 @@
 
 **2.1** Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does have now? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11. Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
@@ -73,8 +73,8 @@
 
 **2.2** Q: Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Roger has 3 children, each of whom came to the party. Each of them have 4 friends coming over. 3 * 4 = 12. So 12 of their friends came to the party. 12 + 3 = 15. So, there are 15 children at the party in total. The answer is 15. Q: Ben has 4 children. 50% of his kids are in college and no longer live at home. How many of Ben's children still live at home? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 <br>
@@ -88,15 +88,15 @@
 
 Response #1:
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
 Response #2:
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
@@ -106,15 +106,15 @@ Response #2:
 
 Response #1:
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
 Response #2:
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
 
@@ -135,7 +135,7 @@ Response #1
 
 Response #2:
 
-| model                        | correct   | response             |
-|------------------------------|:---------:|--------------------------|
+| model                        | response             | correct   |
+|------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
 | `anthropic/claude-2`         | | |
