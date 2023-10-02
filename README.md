@@ -12,16 +12,12 @@
 |--------------------------------------|--------------|:-------------:|
 | `openai/gpt-4`                       | Mar 2023     |     xx        |
 | `anthropic/claude-2`                 | Jul 2023     |     xx        |
-| `openai/gpt-3.5`                     | Nov 2022     |     xx        |
 | `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |
 | `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |
-| `google/flan-t5-xxl`                 | Sep 2021     |     xx        |
-| `mistralai/Mistral-7B-Instruct-v0.1` | Sep 2023     |     xx        |
-| `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023      |     xx       |
+| `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023     |     xx        |
 | `meta-llama/Llama-2-13b-chat-hf`     | Jul 2023     |     xx        |
 | `meta-llama/Llama-2-7b-chat-hf`      | Jul 2023     |     xx        |
-
-
+| `mistralai/Mistral-7B-Instruct-v0.1` | Sep 2023     |     xx        |
 
 <br>
 
