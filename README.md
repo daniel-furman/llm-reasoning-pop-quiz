@@ -33,8 +33,8 @@
 
 **1.1** Q: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
 
-| model                        |  | response             | correct  |
-|------------------------------|--------------------------|:---------:|
+| model                        |  | response             | correct  
+|------------------------------|--------------------------|:---------:
 | `openai/gpt-4`               | 1. Half of the 16 balls are golf balls: $\( \frac{16}{2} = 8 \)$ golf balls.<br /> 2. Half of the golf balls are blue: $\( \frac{8}{2} = 4 \)$ blue golf balls.| ✔ |
 | `anthropic/claude-2`         | • 16 total balls<br /> • Half are golf balls: 8<br /> • Half of those are blue: 4<br /> • So there are 4 blue golf balls.| ✔ |
 
