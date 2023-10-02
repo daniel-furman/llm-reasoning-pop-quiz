@@ -95,14 +95,14 @@ Response #1:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
+| `openai/gpt-4`               | A: Ben takes 10 minutes to drive to the store and an additional 4 minutes to find parking, so before he can start shopping it takes him a total of 10 minutes + 4 minutes = 14 minutes. | ✔ |
 | `anthropic/claude-2`         | • Ben takes 10 minutes to drive to the store<br /> • He then takes 4 minutes to find parking<br /> • So the total time before he can start shopping is 10 + 4 = 14 minutes<br /><br />Therefore, the total time before Ben can start shopping is 14 minutes.| ✔ |
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
+| `openai/gpt-4`               | A: Yes, if Ben takes 14 minutes to get to the store and start shopping, he will make it before the store closes, as an hour (60 minutes) is sufficient time for this journey. | ✔ |
 | `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • It takes Ben 14 minutes total before he can start shopping (10 minutes to drive + 4 minutes to park)<br /> •The store closes in 1 hour<br /> • So Ben has 1 hour - 14 minutes = 46 minutes to shop before the store closes<br /><br />Since Ben has 46 minutes to shop before the store closes, and it only took him 14 minutes to get there, yes he can make it to the store before it closes.| ✔ |
 
 <br>
