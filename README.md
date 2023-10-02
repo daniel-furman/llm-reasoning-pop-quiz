@@ -115,39 +115,38 @@ Response #2:
 
 * From [https://arxiv.org/abs/2305.17812](https://arxiv.org/abs/2305.17812)
 
-**4.1**: Q: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
+**4.1**: Q: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
-Response #1
+`openai/gpt-4` response (✔️): 
 
-`openai/gpt-4`'s response (): 
+`anthropic/claude-2` response (✔️): 
 
-`anthropic/claude-2`'s response (): 
+**4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves, meaning they were added back to the total. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
-Response #2:
-
-| model                        | response             | correct   |
-|------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
-
-**4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves, meaning they were added back to the total. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:| `{insert response #1}`. Therefore, the answer is `{insert response #2}`.
-
-Response #1
-
-`openai/gpt-4`'s response (): 
-
-`anthropic/claude-2`'s response (): 
+`openai/gpt-4` response (✔️): 
 
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:|
+|1|How many loaves were sold in the morning?|Given in problem statement|93|
+|2|How many loaves were sold in the afternoon?|Given in problem statement|39|
+|3|How many loaves were sold in total on Monday?|Add results from step 1 and 2|132|
+|4|How many unsold loaves were returned?|Given in problem statement|6|
+|5|How many loaves were left after all sales, before returns?|Subtract result from step 3 from initial 200|68|
+|6|How many loaves were left after returns were added back?|Add results from step 4 and 5|74|
 
+`anthropic/claude-2` response (✔️): 
 
+Here is the step-by-step solution:
 
-Response #2:
+|step|subquestion|procedure|result|  
+|:---|:----------|:--------|:-----:|
+|1|How many loaves did they bake originally?|Given|200|
+|2|How many loaves did they sell in the morning?|Given|93|  
+|3|How many loaves did they sell in the afternoon?|Given|39|
+|4|How many unsold loaves were returned?|Given|6|
+|5|How many loaves were sold total?|Morning sales + Afternoon sales|93 + 39 = 132|
+|6|How many loaves came back unsold?|Given|6|  
+|7|What is the total inventory now?|Original baked - Total sold + Unsold returned|200 - 132 + 6 = 74|
 
-| model                        | response             | correct   |
-|------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
-
+Therefore, the number of loaves they had left is 74.
 
