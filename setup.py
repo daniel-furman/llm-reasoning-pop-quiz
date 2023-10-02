@@ -13,7 +13,7 @@ setup(
     keywords="",
     url="",
     package_dir={"": "src"},
-    packages=["drf_llm_boilers"],
+    packages=["boilers"],
     include_package_data=False,
     python_requires=">=3.8.8",
     classifiers=[
