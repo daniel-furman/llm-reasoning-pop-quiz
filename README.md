@@ -117,13 +117,13 @@ Response #2:
 
 **4.1**: Q: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
-`openai/gpt-4` response (✔️): 
+`openai/gpt-4` (✔️): 
 
-`anthropic/claude-2` response (✔️): 
+`anthropic/claude-2` (✔️): 
 
 **4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves, meaning they were added back to the total. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
-`openai/gpt-4` response (✔️): 
+`openai/gpt-4` (✔️): 
 
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:|
@@ -134,7 +134,7 @@ Response #2:
 |5|How many loaves were left after all sales, before returns?|Subtract result from step 3 from initial 200|68|
 |6|How many loaves were left after returns were added back?|Add results from step 4 and 5|74|
 
-`anthropic/claude-2` response (✔️): 
+`anthropic/claude-2` (✔️): 
 
 Here is the step-by-step solution:
 
