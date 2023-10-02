@@ -54,7 +54,7 @@
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br />The answer is 9.| ✔ |
-| `anthropic/claude-2`         | Okay, let's break this down:<br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /> The cafeteria now has 9 apples.| ✔ |
+| `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /><br />The cafeteria now has 9 apples.| ✔ |
 
 <br>
 
@@ -63,7 +63,7 @@
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | Ben has 4 children. If 50% of them are in college and no longer live at home, then:<br />50/100 * 4 = 2 of his children are in college and do not live at home.<br />So, the number of Ben's children that still live at home is:<br />4 (total children) - 2 (children in college) = 2.<br />The answer is 2.| ✔ |
-| `anthropic/claude-2`         | Okay, let's think through this:<br /> • Ben has 4 children total<br /> • 50% of his children are in college and don't live at home<br /> • To find 50% of something, we divide by 2<br /> • So 50% of 4 children is 4 / 2 = 2 children<br /> • That means 2 of Ben's children are away in college<br /> • So the number of children still living at home is 4 - 2 = 2<br />Therefore, the number of Ben's children who still live at home is 2.| ✔ |
+| `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • Ben has 4 children total<br /> • 50% of his children are in college and don't live at home<br /> • To find 50% of something, we divide by 2<br /> • So 50% of 4 children is 4 / 2 = 2 children<br /> • That means 2 of Ben's children are away in college<br /> • So the number of children still living at home is 4 - 2 = 2<br /><br />Therefore, the number of Ben's children who still live at home is 2.| ✔ |
 <br>
 
 ### Section 3. Least to most prompting
@@ -78,14 +78,14 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| `anthropic/claude-2`         | • Amy takes 4 minutes to climb up the slide<br /> • She takes 1 minute to slide down<br /> • So each trip up and down takes 4 + 1 = 5 minutes<br /> • Therefore, each trip takes 5 minutes. | ✔ |
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • It takes Amy 5 minutes for each trip up and down the slide<br /> • The slide closes in 15 minutes<br /> • To figure out how many full trips Amy can take, we divide the total time by the time per trip:<br /> • 15 minutes / 5 minutes per trip = 3 trip<br /><br />Therefore, if the slide closes in 15 minutes, Amy can slide 3 times before it closes.| ✔ |
 
 <br>
 
@@ -96,14 +96,14 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| `anthropic/claude-2`         | • Ben takes 10 minutes to drive to the store<br /> • He then takes 4 minutes to find parking<br /> • So the total time before he can start shopping is 10 + 4 = 14 minutes<br /><br />Therefore, the total time before Ben can start shopping is 14 minutes.| |
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | | |
-| `anthropic/claude-2`         | | |
+| `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • It takes Ben 14 minutes total before he can start shopping (10 minutes to drive + 4 minutes to park)<br /> •The store closes in 1 hour<br /> • So Ben has 1 hour - 14 minutes = 46 minutes to shop before the store closes<br /><br />Since Ben has 46 minutes to shop before the store closes, and it only took him 14 minutes to get there, yes he can make it to the store before it closes.| |
 
 <br>
 
