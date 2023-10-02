@@ -115,7 +115,27 @@ Response #2:
 
 `openai/gpt-4` (✔️): 
 
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1|How many rows will the red tulips make?|Divide total red tulips (36) by red tulips per row (6)|6|
+|2|How many rows will the blue tulips make?|Divide total blue tulips (24) by blue tulips per row (8)|3|
+|3|How many total rows of tulips will there be?|Add results from step 1 and 2|9|
+
 `anthropic/claude-2` (✔️): 
+
+Here is the step-by-step solution:
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|  
+|1|How many red tulips did Jackson buy?|Given|36|
+|2|How many red tulips fit in 1 row?|Given|6|
+|3|How many rows of red tulips can be planted?|Red tulips bought / Red tulips per row|36 / 6 = 6|
+|4|How many blue tulips did Jackson buy?|Given|24|
+|5|How many blue tulips fit in 1 row?|Given|8|
+|6|How many rows of blue tulips can be planted?|Blue tulips bought / Blue tulips per row|24 / 8 = 3|
+|7|How many total rows will be planted?|Red rows + Blue rows|6 + 3 = 9|
+
+Therefore, the total number of rows Jackson will plant is 9.
 
 **4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store returned 6 unsold loaves, meaning they were added back to the total. How many loaves of bread did they have left? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
