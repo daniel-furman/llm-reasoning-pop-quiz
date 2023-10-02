@@ -101,8 +101,7 @@ Response #1:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Ben takes 10 minutes to drive to the store and an additional 4 minutes to find parking, so before he can start shopping it takes him a total of 10 minutes + 4 minutes = 14 minutes. | ✔ |
 | `anthropic/claude-2`         | • Ben takes 10 minutes to drive to the store<br /> • He then takes 4 minutes to find parking<br /> • So the total time before he can start shopping is 10 + 4 = 14 minutes<br /><br />Therefore, the total time before Ben can start shopping is 14 minutes.| ✔ |
-| `mistralai/mistral-7b-instruct-v0.1` | Ben needs to wait 14 minutes before he can start shopping.
- | ✔ |
+| `mistralai/mistral-7b-instruct-v0.1` | Ben needs to wait 14 minutes before he can start shopping. | ✔ |
 
 Response #2:
 
