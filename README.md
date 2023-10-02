@@ -143,21 +143,12 @@ Therefore, the total number of rows Jackson will plant is 9.
 
 Here's the solution step by step in the requested table format:
 
-\[
-\begin{array}{|l|l|l|r|}
-\hline
-\text{step} & \text{subquestion} & \text{procedure} & \text{result} \\
-\hline
-1 & \text{How many loaves were sold in total?} & 93 \text{ (morning) } + 39 \text{ (afternoon)} & 132 \\
-\hline
-2 & \text{How many loaves were left after sales?} & 200 \text{ (baked) } - 132 \text{ (sold)} & 68 \\
-\hline
-3 & \text{How many loaves were returned?} & \text{Add the returned loaves} & 6 \\
-\hline
-4 & \text{Final total of loaves left?} & 68 \text{ (after sales) } + 6 \text{ (returned)} & 74 \\
-\hline
-\end{array}
-\]
+| step | subquestion                            | procedure                       | result |
+|------|----------------------------------------|---------------------------------|--------|
+| 56   | How many loaves were sold in total?    | 93 (morning) + 39 (afternoon)   | 132    |
+| 13   | How many laoves were left after sales? | 200 (baked) - 132 (sold)        | 68     |
+| 61   | How many loaves were returned?         | Add the returned loaves         | 6      |
+| 50   | Final total of loaves left?            | 68 (after sales) + 6 (returned) | 74     |
 
 Explanation:
 
