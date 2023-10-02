@@ -8,16 +8,16 @@
 
 ## Test Leaderboard
 
-| model                                | release date | quiz score |
-|--------------------------------------|--------------|:-------------:|
-| `openai/gpt-4`                       | Mar 2023     |     8/8       |
-| `anthropic/claude-2`                 | Jul 2023     |     8/8       |
-| `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |
-| `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |
-| `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023     |     xx        |
-| `meta-llama/Llama-2-13b-chat-hf`     | Jul 2023     |     xx        |
-| `meta-llama/Llama-2-7b-chat-hf`      | Jul 2023     |     xx        |
-| `mistralai/Mistral-7B-Instruct-v0.1` | Sep 2023     |     xx        |
+| model                                | release date | quiz score    | test date    | 
+|--------------------------------------|--------------|:-------------:|--------------|
+| `openai/gpt-4`                       | Mar 2023     |     8/8       | 10/01/2023   |
+| `anthropic/claude-2`                 | Jul 2023     |     7/8       | 10/01/2023   |
+| `tiiuae/falcon-40b-instruct`         | May 2023     |     xx        |     xx       |
+| `mosaicml/mpt-30b-instruct`          | Jun 2023     |     xx        |     xx       |
+| `meta/llama-2-70b-chat`              | Jul 2023     |     xx        |     xx       |
+| `meta/llama-2-13b-chat`              | Jul 2023     |     xx        |     xx       |
+| `meta/llama-2-7b-chat`               | Jul 2023     |     xx        |     xx       |
+| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |     xx        |     xx       |
 
 <br>
 
@@ -150,19 +150,16 @@ Therefore, the total number of rows Jackson will plant is 9.
 |5|How many loaves were left after all sales, before returns?|Subtract result from step 3 from initial 200|68|
 |6|How many loaves were left after returns were added back?|Add results from step 4 and 5|74|
 
-`anthropic/claude-2` (✔️): 
+`anthropic/claude-2` (ⅹ): 
 
-Here is the step-by-step solution:
+A: Here is the completed table showing the steps to solve this math word problem:
 
-|step|subquestion|procedure|result|  
+|step|subquestion|procedure|result
 |:---|:----------|:--------|:-----:|
-|1|How many loaves did they bake originally?|Given|200|
-|2|How many loaves did they sell in the morning?|Given|93|  
-|3|How many loaves did they sell in the afternoon?|Given|39|
-|4|How many unsold loaves were returned?|Given|6|
-|5|How many loaves were sold total?|Morning sales + Afternoon sales|93 + 39 = 132|
-|6|How many loaves came back unsold?|Given|6|  
-|7|What is the total inventory now?|Original baked - Total sold + Unsold returned|200 - 132 + 6 = 74|
-
-Therefore, the number of loaves they had left is 74.
+|1|How many loaves did the bakery bake on Monday morning?|Given in the problem|200 loaves
+|2|How many loaves did they sell in the morning?|Given in the problem|93 loaves
+|3|How many loaves did they sell in the afternoon?|Given in the problem|39 loaves  
+|4|How many unsold loaves were returned?|Given in the problem|6 loaves
+|5|How many loaves were sold total?|Morning sales + afternoon sales|93 + 39 = 132 loaves
+|6|How many baked loaves remain?|Original loaves - sold loaves - returned loaves|200 - 132 - 6 = 62 loaves
 
