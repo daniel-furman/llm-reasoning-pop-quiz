@@ -8,7 +8,7 @@
 
 ## Test Leaderboard
 
-| model   | | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
+| model   | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
 |----------|:--------------:|--------------|:--------------:|:-------------:|--------------|
 | `openai/gpt-4`                       |     -      |    RLHF  |   	95.28      |    -       | -   |
 | `meta-llama/Llama-2-70b-chat-hf`     |    70B     |    RLHF  |   	92.66      |   -        | -   |
