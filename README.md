@@ -8,11 +8,12 @@
 
 ## Test Leaderboard
 
-| model                                | release date | quiz score    | test date    | 
-|--------------------------------------|--------------|:-------------:|--------------|
-| `openai/gpt-4`                       | Mar 2023     |     8/8       | 10.01.2023   |
-| `anthropic/claude-2`                 | Jul 2023     |     7/8       | 10.01.2023   |
-| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |     7/8       | 10.01.2023   |
+| model   | release date  | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
+|--------------------------------------|--------------|--------------|--------------|--------------|:-------------:|--------------|
+| `openai/gpt-4`                       | Mar 2023     |    -     |    RLHF  |   	95.28     |     8/8       | 10/01/2023   |
+| `anthropic/claude-2`                 | Jul 2023     |    -     |    RLHF  |   	91.36     7/8       | 10/01/2023   |
+| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |    7B     |    SFT  |   	-  |   7/8       | 10/01/2023   |
+| `HuggingFaceH4/zephyr-7b-beta` | Oct 2023     |    7B     |    dDPO  |   	90.60  |   7/8       | 10/28/2023   |
 
 <br>
 
