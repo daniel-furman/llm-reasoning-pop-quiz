@@ -98,12 +98,23 @@ def zephyr(
     eos_token_ids: List[int],
     max_new_tokens: int = 128,
     do_sample: bool = True,
-    temperature: int = 1.0,
-    top_p: int = 1.0,
+    temperature: float = 0.7,
+    top_p: float = 0.95,
     top_k: int = 50,
     num_return_sequences: int = 1,
+    decode: bool = False,
 ) -> str:
     streamer = transformers.TextStreamer(tokenizer)
+
+    # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
+    messages = [
+        {"role": "user", "content": prompt},
+    ]
+    prompt = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    if decode:
+        print(prompt)
 
     inputs = tokenizer(
         prompt,
