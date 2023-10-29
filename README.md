@@ -10,13 +10,13 @@
 
 | model   | | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
 |----------|:--------------:|--------------|:--------------:|:-------------:|--------------|
-| `openai/gpt-4`                       |     -      |    RLHF  |   	95.28      |    -   | 10/28/2023   |
-| `openai/gpt-3.5`                       |    -      |    RLHF  |   	95.28      |    -   | -   |
-| `anthropic/claude-2`                 |     -      |    RLHF  |   	91.36      |    -    | -   |
-| `mistralai/mistral-7b-instruct-v0.1` |   7B     |    SFT   |   	-          |    -     | 10/28/2023   |
-| `HuggingFaceH4/mistral-7b-sft-beta`  |    7B     |    dSFT  |   	-          |   -       | -   |
-| `HuggingFaceH4/zephyr-7b-beta`       |     7B     |    dDPO  |   	90.60      |   -       | -  |
+| `openai/gpt-4`                       |     -      |    RLHF  |   	95.28      |    -   | -   |
 | `meta-llama/Llama-2-70b-chat-hf`     |    13B    |    RLHF  |   	92.66      |   -       | -   |
+| `anthropic/claude-2`                 |     -      |    RLHF  |   	91.36      |    -    | -   |
+| `openai/gpt-3.5`                       |    -      |    RLHF  |  	81.71      |    -   | -   |
+| `HuggingFaceH4/zephyr-7b-beta`       |     7B     |    dDPO  |   	90.60      |   -       | -  |
+| `mistralai/mistral-7b-instruct-v0.1` |   7B     |    SFT   |   	-          |    -     | -   |
+| `HuggingFaceH4/mistral-7b-sft-beta`  |    7B     |    dSFT  |   	-          |   -       | -   |
 | `dfurman/mistral-7b-instruct-peft`   |    7B     |    dSFT  |   	-          |   -       | -   |
 
 
@@ -35,7 +35,6 @@
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
 | `openai/gpt-4`               | 1. Half of the 16 balls are golf balls: $\( \frac{16}{2} = 8 \)$ golf balls.<br /> 2. Half of the golf balls are blue: $\( \frac{8}{2} = 4 \)$ blue golf balls.| ✔ |
-| `anthropic/claude-2`         | • 16 total balls<br /> • Half are golf balls: 8<br /> • Half of those are blue: 4<br /> • So there are 4 blue golf balls.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1`         | Let's break down the information given:<br />1. There are 16 balls in total.<br />2. Half of the balls are golf balls.<br />3. Half of the golf balls are blue.<br /><br />Now let's apply this logic:<br />1. We know that half of the balls are golf balls, so there are 16 / 2 = 8 golf balls.<br />2. Half of these golf balls are blue, so there are 8 / 2 = 4 blue golf balls.<br /><br />Final answer: There are 4 blue golf balls. | ✔ |
 
 <br>
@@ -45,28 +44,7 @@
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
 | `openai/gpt-4`               | No, it does not make logical sense for Daniel to go in for a haircut on Sunday when his barber works on Mondays, Wednesdays, and Fridays.| ✔ |
-| `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | No, this does not make logical sense. Daniel's barber works on Mondays, Wednesdays, and Fridays, so he would not be available on Sunday for a haircut. Daniel would need to go to the barber on one of those days. | ✔ |
-
-**1.3** The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?\nRespond as succinctly as possible. Let's think step by step.
-
-| model                        |  response             | correct  |
-|------------------------------|-----------------------|:---------:|
-| `openai/gpt-4`               | Alright, step by step:<br /><br />1. Start with 23 apples.<br />2. Used 20 apples: 23 - 20 = 3 apples remaining.<br />3. Bought 6 more: 3 + 6 = 9 apples.<br /><br />They have 9 apples. | ✔ |
-| `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
-| `mistralai/mistral-7b-instruct-v0.1` | No, this does not make logical sense. Daniel's barber works on Mondays, Wednesdays, and Fridays, so he would not be available on Sunday for a haircut. Daniel would need to go to the barber on one of those days. | ✔ |
-
-
-**1.4** Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nRespond as succinctly as possible. Let's think step by step.
-
-| model                        |  response             | correct  |
-|------------------------------|-----------------------|:---------:|
-| `openai/gpt-4`               | No, it does not make logical sense for Daniel to go in for a haircut on Sunday when his barber works on Mondays, Wednesdays, and Fridays.| ✔ |
-| `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
-| `mistralai/mistral-7b-instruct-v0.1` | No, this does not make logical sense. Daniel's barber works on Mondays, Wednesdays, and Fridays, so he would not be available on Sunday for a haircut. Daniel would need to go to the barber on one of those days. | ✔ |
-
-
-<br>
 
 ### Section 2. Least to most prompting
 
@@ -80,7 +58,6 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Each trip (climbing up and sliding down) for Amy takes a total of 5 minutes (4 minutes to climb up + 1 minute to slide down).| ✔ |
-| `anthropic/claude-2`         | • Amy takes 4 minutes to climb up the slide<br /> • She takes 1 minute to slide down<br /> • So each trip up and down takes 4 + 1 = 5 minutes<br /> • Therefore, each trip takes 5 minutes. | ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | Each trip takes 5 minutes. | ✔ |
 
 Response #2:
@@ -88,7 +65,6 @@ Response #2:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Amy takes 5 minutes for one complete cycle of climbing up and sliding down. If the slide closes in 15 minutes, she can make $\(\frac{15}{5} = 3\)$ trips before it closes.| ✔ |
-| `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • It takes Amy 5 minutes for each trip up and down the slide<br /> • The slide closes in 15 minutes<br /> • To figure out how many full trips Amy can take, we divide the total time by the time per trip:<br /> • 15 minutes / 5 minutes per trip = 3 trip<br /><br />Therefore, if the slide closes in 15 minutes, Amy can slide 3 times before it closes.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | She can slide 3 times before it closes. | ✔ |
 
 <br>
@@ -100,7 +76,6 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Ben takes 10 minutes to drive to the store and an additional 4 minutes to find parking, so before he can start shopping it takes him a total of 10 minutes + 4 minutes = 14 minutes. | ✔ |
-| `anthropic/claude-2`         | • Ben takes 10 minutes to drive to the store<br /> • He then takes 4 minutes to find parking<br /> • So the total time before he can start shopping is 10 + 4 = 14 minutes<br /><br />Therefore, the total time before Ben can start shopping is 14 minutes.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | Ben needs to wait 14 minutes before he can start shopping. | ✔ |
 
 Response #2:
@@ -108,7 +83,6 @@ Response #2:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               | A: Yes, if Ben takes 14 minutes to get to the store and start shopping, he will make it before the store closes, as an hour (60 minutes) is sufficient time for this journey. | ✔ |
-| `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • It takes Ben 14 minutes total before he can start shopping (10 minutes to drive + 4 minutes to park)<br /> •The store closes in 1 hour<br /> • So Ben has 1 hour - 14 minutes = 46 minutes to shop before the store closes<br /><br />Since Ben has 46 minutes to shop before the store closes, and it only took him 14 minutes to get there, yes he can make it to the store before it closes.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | Yes, Ben can make it to the store before it closes. | ✔ |
 
 <br>
@@ -127,23 +101,6 @@ Response #2:
 |1|How many rows will the red tulips make?|Divide total red tulips (36) by red tulips per row (6)|6|
 |2|How many rows will the blue tulips make?|Divide total blue tulips (24) by blue tulips per row (8)|3|
 |3|How many total rows of tulips will there be?|Add results from step 1 and 2|9|
-
-
-`anthropic/claude-2` (✔️): 
-
-Here is the step-by-step solution:
-
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|  
-|1|How many red tulips did Jackson buy?|Given|36|
-|2|How many red tulips fit in 1 row?|Given|6|
-|3|How many rows of red tulips can be planted?|Red tulips bought / Red tulips per row|36 / 6 = 6|
-|4|How many blue tulips did Jackson buy?|Given|24|
-|5|How many blue tulips fit in 1 row?|Given|8|
-|6|How many rows of blue tulips can be planted?|Blue tulips bought / Blue tulips per row|24 / 8 = 3|
-|7|How many total rows will be planted?|Red rows + Blue rows|6 + 3 = 9|
-
-Therefore, the total number of rows Jackson will plant is 9.
 
 `mistralai/mistral-7b-instruct-v0.1` (✔️): 
 
@@ -172,19 +129,6 @@ Explanation:
 - Step 2: Find out the number of loaves remaining after all were sold by subtracting the number sold from the number baked: \(200 - 132 = 68\) loaves.
 - Step 3: Identify the number of loaves returned to the bakery: 6 loaves.
 - Step 4: Add the number of loaves returned to the remaining number after sales to get the final total of loaves left in the bakery: \(68 + 6 = 74\) loaves.
-
-`anthropic/claude-2` (ⅹ): 
-
-A: Here is the completed table showing the steps to solve this math word problem:
-
-|step|subquestion|procedure|result
-|:---|:----------|:--------|:-----:|
-|1|How many loaves did the bakery bake on Monday morning?|Given in the problem|200 loaves
-|2|How many loaves did they sell in the morning?|Given in the problem|93 loaves
-|3|How many loaves did they sell in the afternoon?|Given in the problem|39 loaves  
-|4|How many unsold loaves were returned?|Given in the problem|6 loaves
-|5|How many loaves were sold total?|Morning sales + afternoon sales|93 + 39 = 132 loaves
-|6|How many baked loaves remain?|Original loaves - sold loaves - returned loaves|200 - 132 - 6 = 62 loaves
 
 `mistralai/mistral-7b-instruct-v0.1` (ⅹ): 
 
