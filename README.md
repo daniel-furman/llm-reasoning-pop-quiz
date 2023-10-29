@@ -27,7 +27,7 @@
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
 
-**1.1** Q: A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
+**1.1** A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? Let's think step by step.
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
@@ -37,7 +37,7 @@
 
 <br>
 
-**1.2** Q: Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
+**1.2** Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? Let's think step by step.
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
@@ -49,36 +49,12 @@
 
 <br>
 
-### Section 2. CoT reasoning with few-shot examples
-
-* From [https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html](https://ai.googleblog.com/2022/05/language-models-perform-reasoning-via.html)
-
-**2.1** Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does have now? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. 5 + 6 = 11. The answer is 11. Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
-
-| model                        | response             | correct   |
-|------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | The cafeteria started with 23 apples. They used 20 apples to make lunch, so:<br /><br />23 - 20 = 3 apples remaining.<br />Then, they bought 6 more apples:<br />3 + 6 = 9 apples.<br /><br />The answer is 9.| ✔ |
-| `anthropic/claude-2`         | Okay, let's break this down:<br /><br /> • The cafeteria originally had 23 apples<br /> • They used 20 apples to make lunch<br /> • So they had 23 - 20 = 3 apples left<br /> • Then they bought 6 more apples<br /> • So now they have 3 + 6 = 9 apples<br /><br />The cafeteria now has 9 apples.| ✔ |
-| `mistralai/mistral-7b-instruct-v0.1` | The cafeteria started with 23 apples. They used 20 to make lunch, leaving 3 apples. Then they bought 6 more apples, bringing their total to 9 apples. The answer is 9. | ✔ |
-
-<br>
-
-**2.2** Q: Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Roger has 3 children, each of whom came to the party. Each of them have 4 friends coming over. 3 * 4 = 12. So 12 of their friends came to the party. 12 + 3 = 15. So, there are 15 children at the party in total. The answer is 15. Q: Ben has 4 children. 50% of his kids are in college and no longer live at home. How many of Ben's children still live at home? A: Take a deep breath and work on this problem step-by-step. Respond succinctly.
-
-| model                        | response             | correct   |
-|------------------------------|----------------------|:---------:|
-| `openai/gpt-4`               | Ben has 4 children. If 50% of them are in college and no longer live at home, then:<br /><br />50/100 * 4 = 2 of his children are in college and do not live at home.<br />So, the number of Ben's children that still live at home is:<br />4 (total children) - 2 (children in college) = 2.<br /><br />The answer is 2.| ✔ |
-| `anthropic/claude-2`         | Okay, let's think through this:<br /><br /> • Ben has 4 children total<br /> • 50% of his children are in college and don't live at home<br /> • To find 50% of something, we divide by 2<br /> • So 50% of 4 children is 4 / 2 = 2 children<br /> • That means 2 of Ben's children are away in college<br /> • So the number of children still living at home is 4 - 2 = 2<br /><br />Therefore, the number of Ben's children who still live at home is 2.| ✔ |
-| `mistralai/mistral-7b-instruct-v0.1` | 50% of Ben's children are in college and no longer live at home. Therefore, 50% of 4 children still live at home. 0.5 * 4 = 2. So, 2 of Ben's children still live at home. The answer is 2. | ✔ |
-
-<br>
-
-### Section 3. Least to most prompting
+### Section 2. Least to most prompting
 
 * From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
 
 
-**3.1**: Q: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. `{insert response #1}` Q: The slide closes in 15 minutes. How many times can she slide before it closes? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. `{insert response #2}`
+**2.1**: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take? Let's think step by step. `{insert response #1}` The slide closes in 15 minutes. How many times can she slide before it closes? Let's think step by step. `{insert response #2}`
 
 Response #1:
 
@@ -98,7 +74,7 @@ Response #2:
 
 <br>
 
-**3.2**: Q: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. `{insert response #1}` Q: The store closes in an hour. Can he make to the store before it closes? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. `{insert response #2}`
+**2.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping? Let's think step by step. `{insert response #1}` The store closes in an hour. Can he make to the store before it closes? Let's think step by step. `{insert response #2}`
 
 Response #1:
 
@@ -118,11 +94,11 @@ Response #2:
 
 <br>
 
-### Section 4. Tabular Chain of Thought
+### Section 3. Tabular Chain of Thought
 
 * From [https://arxiv.org/abs/2305.17812](https://arxiv.org/abs/2305.17812)
 
-**4.1**: Q: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? A: Take a deep breath and work on this problem step-by-step. Respond succinctly. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
+**3.1**: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Let's think step by step. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
 `openai/gpt-4` (✔️): 
 
@@ -158,7 +134,7 @@ Therefore, the total number of rows Jackson will plant is 9.
 |2.|How many rows of blue tulips can Jackson plant?|Divide the number of blue tulips by the number of blue tulips per row.|24/8 = 3 rows of blue tulips.|
 |3.|How many rows of flowers can Jackson plant in total?|Add the number of rows of red tulips and blue tulips.|6 + 3 = 9 rows of flowers.|
 
-**4.2**: Q: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
+**3.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
 `openai/gpt-4` (✔️): 
 
