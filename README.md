@@ -57,13 +57,14 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               |  - | - |
+| `mistralai/mistral-7b-instruct-v0.1` | - | - |
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               |  - | - |
-
+| `mistralai/mistral-7b-instruct-v0.1` | - | - |
 <br>
 
 **2.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nRespond as succinctly as possible. Let's think step by step. `{insert response #1}` The store closes in an hour. Can he make to the store before it closes?\nRespond as succinctly as possible. Let's think step by step. `{insert response #2}`
