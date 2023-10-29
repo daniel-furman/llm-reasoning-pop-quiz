@@ -23,7 +23,7 @@
 
 ## Questions with Answers
 
-**NB** Only the top performing models are shown in the responses below. See the ```notebooks``` folder for more results.
+**NB**: Only the top performing models are shown in the responses below. See the ```notebooks``` folder for more results.
 
 ### Section 1. Zero-shot CoT reasoning
 
