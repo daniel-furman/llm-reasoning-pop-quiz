@@ -8,15 +8,16 @@
 
 ## Test Leaderboard
 
-| model   | release date  | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
-|----------|--------------|:--------------:|--------------|:--------------:|:-------------:|--------------|
-| `openai/gpt-4`                       | Mar 2023     |    -      |    RLHF  |   	95.28      |    8/8   | 10/01/2023   |
-| `anthropic/claude-2`                 | Jul 2023     |    -      |    RLHF  |   	91.36      |    7/8    | 10/01/2023   |
-| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |    7B     |    SFT   |   	-          |    7/8     | 10/01/2023   |
-| `HuggingFaceH4/mistral-7b-sft-beta`  | Oct 2023     |    7B     |    dSFT  |   	-          |   -       | 10/28/2023   |
-| `HuggingFaceH4/zephyr-7b-beta`       | Oct 2023     |    7B     |    dDPO  |   	90.60      |   -       | 10/28/2023   |
-| `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023     |    13B    |    RLHF  |   	92.66      |   -       | 10/28/2023   |
-| `dfurman/mistral-7b-instruct-peft`   | Sep 2023     |    7B     |    dSFT  |   	-          |   -       | 10/28/2023   |
+| model   | | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
+|----------|:--------------:|--------------|:--------------:|:-------------:|--------------|
+| `openai/gpt-4`                       |     -      |    RLHF  |   	95.28      |    -   | 10/28/2023   |
+| `openai/gpt-3.5`                       |    -      |    RLHF  |   	95.28      |    -   | -   |
+| `anthropic/claude-2`                 |     -      |    RLHF  |   	91.36      |    -    | -   |
+| `mistralai/mistral-7b-instruct-v0.1` |   7B     |    SFT   |   	-          |    -     | 10/28/2023   |
+| `HuggingFaceH4/mistral-7b-sft-beta`  |    7B     |    dSFT  |   	-          |   -       | -   |
+| `HuggingFaceH4/zephyr-7b-beta`       |     7B     |    dDPO  |   	90.60      |   -       | -  |
+| `meta-llama/Llama-2-70b-chat-hf`     |    13B    |    RLHF  |   	92.66      |   -       | -   |
+| `dfurman/mistral-7b-instruct-peft`   |    7B     |    dSFT  |   	-          |   -       | -   |
 
 
 <br>
@@ -51,7 +52,7 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
-| `openai/gpt-4`               | Sure, let's break it down step by step.<br />Starting Amount:<br />The cafeteria starts with 23 apples.<br /> <br /> Using Apples for Lunch:<br />They used 20 apples for lunch.<br />So, 23 (original amount) - 20 (used for lunch) = 3 apples.<br /><br />Buying More Apples:<br />They bought 6 more apples.<br />So, 3 (remaining apples after lunch) + 6 (newly purchased apples) = 9 apples.<br /><br />In conclusion, after using apples for lunch and buying more, the cafeteria has 9 apples left.| ✔ |
+| `openai/gpt-4`               | Alright, step by step:<br /><br />1. Start with 23 apples.<br />2. Used 20 apples: 23 - 20 = 3 apples remaining.<br />3. Bought 6 more: 3 + 6 = 9 apples.<br /><br />They have 9 apples. | ✔ |
 | `anthropic/claude-2`         | • Daniel needs a haircuts<br /> • His barber works Mondays, Wednesdays, Fridays<br /> • Daniel went for a haircut on Sunday<br /> • The barber doesn't work Sundays<br /> • So it's illogical that Daniel went on a day the barber doesn't work.<br /> • Therefore, no it does not make logical sense.| ✔ |
 | `mistralai/mistral-7b-instruct-v0.1` | No, this does not make logical sense. Daniel's barber works on Mondays, Wednesdays, and Fridays, so he would not be available on Sunday for a haircut. Daniel would need to go to the barber on one of those days. | ✔ |
 
