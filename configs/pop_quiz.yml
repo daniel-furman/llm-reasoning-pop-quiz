@@ -1,26 +1,26 @@
 prompts:
   zero_shot: [
-    "A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there? Let's think step by step.",
-    "Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense? Let's think step by step.",
-    "The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have? Let's think step by step.",
-    "Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party? Let's think step by step.",
+    "A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there?\nRespond as succinctly as possible. Let's think step by step.",
+    "Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nRespond as succinctly as possible. Let's think step by step.",
+    "The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?\nRespond as succinctly as possible. Let's think step by step.",
+    "Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party?\nRespond as succinctly as possible. Let's think step by step.",
   ]
   least_to_most: [
     [
-      "It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take? Let's think step by step.",
-      "The slide closes in 15 minutes. How many times can she slide before it closes? Let's think step by step.",
+      "It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take?\nRespond as succinctly as possible. Let's think step by step.",
+      "The slide closes in 15 minutes. How many times can she slide before it closes?\nRespond as succinctly as possible. Let's think step by step.",
     ],
     [
-      "It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping? Let's think step by step.",
-      "The store closes in an hour. Can he make to the store before it closes? Let's think step by step.",
+      "It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nRespond as succinctly as possible. Let's think step by step.",
+      "The store closes in an hour. Can he make to the store before it closes?\nRespond as succinctly as possible. Let's think step by step.",
     ],
   ]
   tab_cot: [
      [
-       "Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|",
+       "Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|",
      ],
      [
-       "The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left? Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|",
+       "The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|",
      ],     
   ]
 
