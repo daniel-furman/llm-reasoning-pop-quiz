@@ -12,7 +12,7 @@
 |----------|--------------|:--------------:|--------------|:--------------:|:-------------:|--------------|
 | `openai/gpt-4`                       | Mar 2023     |    -      |    RLHF  |   	95.28      |    8/8   | 10/01/2023   |
 | `anthropic/claude-2`                 | Jul 2023     |    -      |    RLHF  |   	91.36      |    7/8    | 10/01/2023   |
-| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |    7B     |    SFT   |   	-          |   7/8     | 10/01/2023   |
+| `mistralai/mistral-7b-instruct-v0.1` | Sep 2023     |    7B     |    SFT   |   	-          |    7/8     | 10/01/2023   |
 | `HuggingFaceH4/mistral-7b-sft-beta`  | Oct 2023     |    7B     |    dSFT  |   	-          |   -       | 10/28/2023   |
 | `HuggingFaceH4/zephyr-7b-beta`       | Oct 2023     |    7B     |    dDPO  |   	90.60      |   -       | 10/28/2023   |
 | `meta-llama/Llama-2-70b-chat-hf`     | Jul 2023     |    13B    |    RLHF  |   	92.66      |   -       | 10/28/2023   |
@@ -23,7 +23,9 @@
 
 ## Questions with Answers
 
-### Section 1. CoT reasoning zero-shot
+**NB** Only the top 4 performing models are shown in the responses below. See the ```notebooks``` folder for more results.
+
+### Section 1. Zero-shot CoT reasoning
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
 
