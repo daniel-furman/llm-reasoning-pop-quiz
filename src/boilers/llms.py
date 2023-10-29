@@ -41,6 +41,7 @@ class llm_boiler:
         top_p,
         top_k,
         num_return_sequences,
+        debug,
     ):
         return self.run_fn(
             model=self.model,
@@ -53,6 +54,7 @@ class llm_boiler:
             top_p=top_p,
             top_k=top_k,
             num_return_sequences=num_return_sequences,
+            debug=debug,
         )
 
 
@@ -102,7 +104,7 @@ def zephyr(
     top_p: float = 0.95,
     top_k: int = 50,
     num_return_sequences: int = 1,
-    decode: bool = False,
+    debug: bool = False,
 ) -> str:
     streamer = transformers.TextStreamer(tokenizer)
 
@@ -113,8 +115,8 @@ def zephyr(
     prompt = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
-    if decode:
-        print(prompt)
+    if debug:
+        print(f"*** Prompt\n{prompt}")
 
     inputs = tokenizer(
         prompt,
@@ -145,6 +147,9 @@ def zephyr(
         )
         if generated_text[0] == " ":
             generated_text = generated_text[1:]
+        
+        if debug:
+            print(f"*** Generated\n{generated_text}")
 
         return generated_text
 
@@ -158,7 +163,9 @@ def zephyr(
             if generated_text[0] == " ":
                 generated_text = generated_text[1:]
             generated_text_list.append(generated_text)
-
+        if debug:
+            print(f"*** Generated\n{str(generated_text_list)}")
+            
         return generated_text_list
 
 
