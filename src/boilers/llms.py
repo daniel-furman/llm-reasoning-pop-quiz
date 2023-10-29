@@ -106,7 +106,7 @@ def zephyr(
     num_return_sequences: int = 1,
     debug: bool = False,
 ) -> str:
-    streamer = transformers.TextStreamer(tokenizer)
+    # streamer = transformers.TextStreamer(tokenizer)
 
     # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
     messages = [
@@ -138,7 +138,7 @@ def zephyr(
         num_return_sequences=num_return_sequences,
         pad_token_id=tokenizer.eos_token_id,
         bos_token_id=tokenizer.eos_token_id,
-        streamer=streamer,
+        # streamer=streamer,
     )
 
     if num_return_sequences == 1:
@@ -147,7 +147,7 @@ def zephyr(
         )
         if generated_text[0] == " ":
             generated_text = generated_text[1:]
-        
+
         if debug:
             print(f"*** Generated\n{generated_text}")
 
@@ -165,7 +165,7 @@ def zephyr(
             generated_text_list.append(generated_text)
         if debug:
             print(f"*** Generated\n{str(generated_text_list)}")
-            
+
         return generated_text_list
 
 
@@ -295,12 +295,24 @@ def llama(
     eos_token_ids: List[int],
     max_new_tokens: int = 128,
     do_sample: bool = True,
-    temperature: int = 1.0,
-    top_p: int = 1.0,
+    temperature: float = 0.7,
+    top_p: float = 0.95,
     top_k: int = 50,
     num_return_sequences: int = 1,
+    debug: bool = False,
 ) -> str:
-    streamer = transformers.TextStreamer(tokenizer)
+    # streamer = transformers.TextStreamer(tokenizer)
+
+    # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
+    messages = [
+        {"role": "system", "content": "Your are a helpful AI assistant."},
+        {"role": "user", "content": prompt},
+    ]
+    prompt = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    if debug:
+        print(f"*** Prompt\n{prompt}")
 
     inputs = tokenizer(
         prompt,
@@ -322,7 +334,7 @@ def llama(
         num_return_sequences=num_return_sequences,
         pad_token_id=tokenizer.eos_token_id,
         bos_token_id=tokenizer.eos_token_id,
-        streamer=streamer,
+        # streamer=streamer,
     )
 
     if num_return_sequences == 1:
@@ -331,6 +343,8 @@ def llama(
         )
         if generated_text[0] == " ":
             generated_text = generated_text[1:]
+        if debug:
+            print(f"*** Generated\n{generated_text}")
 
         return generated_text
 
@@ -344,6 +358,8 @@ def llama(
             if generated_text[0] == " ":
                 generated_text = generated_text[1:]
             generated_text_list.append(generated_text)
+        if debug:
+            print(f"*** Generated\n{str(generated_text_list)}")
 
         return generated_text_list
 
