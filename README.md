@@ -74,11 +74,14 @@ Response #1:
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               |  - | - |
 | `mistralai/mistral-7b-instruct-v0.1` | - | - |
+
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `openai/gpt-4`               |  - | - |
+| `mistralai/mistral-7b-instruct-v0.1` | - | - |
+
 <br>
 
 ### Section 3. Tabular Chain of Thought
