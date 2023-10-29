@@ -65,6 +65,95 @@ MODEL_FUNCTIONS = []
 # * all functions must be added to master lists in order
 
 
+## zephyr models
+def zephyr_loader(
+    model_id: str,  # HF model id
+):
+    tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
+    tokenizer.pad_token = tokenizer.eos_token
+
+    bnb_config = transformers.BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+    )
+
+    model = transformers.AutoModelForCausalLM.from_pretrained(
+        model_id,
+        quantization_config=bnb_config,
+        device_map={"": 0},
+    )
+
+    return model, tokenizer
+
+
+LOAD_MODEL_FUNCTIONS.append(zephyr_loader)
+
+
+def zephyr(
+    model: transformers.AutoModelForCausalLM,
+    tokenizer: transformers.AutoTokenizer,
+    prompt: str,
+    eos_token_ids: List[int],
+    max_new_tokens: int = 128,
+    do_sample: bool = True,
+    temperature: int = 1.0,
+    top_p: int = 1.0,
+    top_k: int = 50,
+    num_return_sequences: int = 1,
+) -> str:
+    streamer = transformers.TextStreamer(tokenizer)
+
+    inputs = tokenizer(
+        prompt,
+        padding=True,
+        truncation=True,
+        return_tensors="pt",
+        return_token_type_ids=False,
+    )
+    inputs = inputs.to(device)
+
+    output_tokens = model.generate(
+        **inputs,
+        eos_token_id=eos_token_ids,
+        max_new_tokens=max_new_tokens,
+        do_sample=do_sample,
+        temperature=temperature,
+        top_p=top_p,
+        top_k=top_k,
+        num_return_sequences=num_return_sequences,
+        pad_token_id=tokenizer.eos_token_id,
+        bos_token_id=tokenizer.eos_token_id,
+        streamer=streamer,
+    )
+
+    if num_return_sequences == 1:
+        generated_text = tokenizer.decode(
+            output_tokens[0][len(inputs.input_ids[0]) :], skip_special_tokens=True
+        )
+        if generated_text[0] == " ":
+            generated_text = generated_text[1:]
+
+        return generated_text
+
+    else:
+        generated_text_list = []
+        for i in range(num_return_sequences):
+            generated_text = tokenizer.decode(
+                output_tokens[i][len(inputs.input_ids[0]) :],
+                skip_special_tokens=True,
+            )
+            if generated_text[0] == " ":
+                generated_text = generated_text[1:]
+            generated_text_list.append(generated_text)
+
+        return generated_text_list
+
+
+MODEL_FUNCTIONS.append(zephyr)
+
+
 ## mistral models
 def mistral_loader(
     model_id: str,  # HF model id
@@ -103,26 +192,6 @@ def mistral(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-    """
-    Initialize the pipeline
-    Uses Hugging Face GenerationConfig defaults
-        https://huggingface.co/docs/transformers/v4.29.1/en/main_classes/text_generation#transformers.GenerationConfig
-    Args:
-        model (transformers.AutoModelForCausalLM): Falcon model for text generation
-        tokenizer (transformers.AutoTokenizer): Tokenizer for model
-        prompt (str): Prompt for text generation
-        eos_token_ids (List[int]): the eos_token(s) for the text generation
-        max_new_tokens (int, optional): Max new tokens after the prompt to generate. Defaults to 128.
-        do_sample (bool, optional): Whether or not to use sampling. Defaults to True.
-        temperature (float, optional): The value used to modulate the next token probabilities.
-            Defaults to 1.0
-        top_p (float, optional): If set to float < 1, only the smallest set of most probable tokens with
-            probabilities that add up to top_p or higher are kept for generation. Defaults to 1.0.
-        top_k (int, optional): The number of highest probability vocabulary tokens to keep for top-k-filtering.
-            Defaults to 50.
-        num_return_sequences (int, optional): The number of independently computed returned sequences for each
-            element in the batch. Defaults to 1.
-    """
     streamer = transformers.TextStreamer(tokenizer)
 
     inputs = tokenizer(
@@ -213,26 +282,6 @@ def llama(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-    """
-    Initialize the pipeline
-    Uses Hugging Face GenerationConfig defaults
-        https://huggingface.co/docs/transformers/v4.29.1/en/main_classes/text_generation#transformers.GenerationConfig
-    Args:
-        model (transformers.AutoModelForCausalLM): Falcon model for text generation
-        tokenizer (transformers.AutoTokenizer): Tokenizer for model
-        prompt (str): Prompt for text generation
-        eos_token_ids (List[int]): the eos_token(s) for the text generation
-        max_new_tokens (int, optional): Max new tokens after the prompt to generate. Defaults to 128.
-        do_sample (bool, optional): Whether or not to use sampling. Defaults to True.
-        temperature (float, optional): The value used to modulate the next token probabilities.
-            Defaults to 1.0
-        top_p (float, optional): If set to float < 1, only the smallest set of most probable tokens with
-            probabilities that add up to top_p or higher are kept for generation. Defaults to 1.0.
-        top_k (int, optional): The number of highest probability vocabulary tokens to keep for top-k-filtering.
-            Defaults to 50.
-        num_return_sequences (int, optional): The number of independently computed returned sequences for each
-            element in the batch. Defaults to 1.
-    """
     streamer = transformers.TextStreamer(tokenizer)
 
     inputs = tokenizer(
@@ -324,26 +373,6 @@ def falcon(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-    """
-    Initialize the pipeline
-    Uses Hugging Face GenerationConfig defaults
-        https://huggingface.co/docs/transformers/v4.29.1/en/main_classes/text_generation#transformers.GenerationConfig
-    Args:
-        model (transformers.AutoModelForCausalLM): Falcon model for text generation
-        tokenizer (transformers.AutoTokenizer): Tokenizer for model
-        prompt (str): Prompt for text generation
-        eos_token_ids (List[int]): the eos_token(s) for the text generation
-        max_new_tokens (int, optional): Max new tokens after the prompt to generate. Defaults to 128.
-        do_sample (bool, optional): Whether or not to use sampling. Defaults to True.
-        temperature (float, optional): The value used to modulate the next token probabilities.
-            Defaults to 1.0
-        top_p (float, optional): If set to float < 1, only the smallest set of most probable tokens with
-            probabilities that add up to top_p or higher are kept for generation. Defaults to 1.0.
-        top_k (int, optional): The number of highest probability vocabulary tokens to keep for top-k-filtering.
-            Defaults to 50.
-        num_return_sequences (int, optional): The number of independently computed returned sequences for each
-            element in the batch. Defaults to 1.
-    """
     streamer = transformers.TextStreamer(tokenizer)
 
     inputs = tokenizer(
@@ -424,26 +453,6 @@ def flan(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-    """
-    Initialize the pipeline
-    Uses Hugging Face GenerationConfig defaults
-        https://huggingface.co/docs/transformers/v4.29.1/en/main_classes/text_generation#transformers.GenerationConfig
-    Args:
-        model (transformers.AutoModelForCausalLM): Falcon model for text generation
-        tokenizer (transformers.AutoTokenizer): Tokenizer for model
-        prompt (str): Prompt for text generation
-        eos_token_ids (List[int]): the eos_token(s) for the text generation
-        max_new_tokens (int, optional): Max new tokens after the prompt to generate. Defaults to 128.
-        do_sample (bool, optional): Whether or not to use sampling. Defaults to True.
-        temperature (float, optional): The value used to modulate the next token probabilities.
-            Defaults to 1.0
-        top_p (float, optional): If set to float < 1, only the smallest set of most probable tokens with
-            probabilities that add up to top_p or higher are kept for generation. Defaults to 1.0.
-        top_k (int, optional): The number of highest probability vocabulary tokens to keep for top-k-filtering.
-            Defaults to 50.
-        num_return_sequences (int, optional): The number of independently computed returned sequences for each
-            element in the batch. Defaults to 1.
-    """
     streamer = transformers.TextStreamer(tokenizer)
 
     inputs = tokenizer(
@@ -527,26 +536,6 @@ def mpt(
     top_k: int = 50,
     num_return_sequences: int = 1,
 ) -> str:
-    """
-    Initialize the pipeline
-    Uses Hugging Face GenerationConfig defaults
-        https://huggingface.co/docs/transformers/v4.29.1/en/main_classes/text_generation#transformers.GenerationConfig
-    Args:
-        model (transformers.AutoModelForCausalLM): Falcon model for text generation
-        tokenizer (transformers.AutoTokenizer): Tokenizer for model
-        prompt (str): Prompt for text generation
-        eos_token_ids (List[int]): the eos_token(s) for the text generation
-        max_new_tokens (int, optional): Max new tokens after the prompt to generate. Defaults to 128.
-        do_sample (bool, optional): Whether or not to use sampling. Defaults to True.
-        temperature (float, optional): The value used to modulate the next token probabilities.
-            Defaults to 1.0
-        top_p (float, optional): If set to float < 1, only the smallest set of most probable tokens with
-            probabilities that add up to top_p or higher are kept for generation. Defaults to 1.0.
-        top_k (int, optional): The number of highest probability vocabulary tokens to keep for top-k-filtering.
-            Defaults to 50.
-        num_return_sequences (int, optional): The number of independently computed returned sequences for each
-            element in the batch. Defaults to 1.
-    """
     streamer = transformers.TextStreamer(tokenizer)
 
     def format_prompt(instruction):
