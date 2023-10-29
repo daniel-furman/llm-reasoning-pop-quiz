@@ -11,7 +11,7 @@
 | model   | | size |	alignment | alpaca eval (win rate %)    | pop quiz score    | test date    | 
 |----------|:--------------:|--------------|:--------------:|:-------------:|--------------|
 | `openai/gpt-4`                       |     -      |    RLHF  |   	95.28      |    -       | -   |
-| `meta-llama/Llama-2-70b-chat-hf`     |    13B     |    RLHF  |   	92.66      |   -        | -   |
+| `meta-llama/Llama-2-70b-chat-hf`     |    70B     |    RLHF  |   	92.66      |   -        | -   |
 | `anthropic/claude-2`                 |     -      |    RLHF  |   	91.36      |    -       | -   |
 | `openai/gpt-3.5`                     |    -       |    RLHF  |  	81.71      |    -       | -   |
 | `HuggingFaceH4/zephyr-7b-beta`       |     7B     |    dDPO  |   	90.60      |   -        | -   |
