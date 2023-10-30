@@ -1,18 +1,18 @@
 prompts:
   zero_shot: [
-    "A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
-    "Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
-    "The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
-    "Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
+    "A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
+    "Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
+    "The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
+    "Roger has 3 children. Each of his kids invited 4 of their friends to come to the birthday party. All of the friends came to the party. How many children are at the party?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
   ]
   least_to_most: [
     [
-      "It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
-      "The slide closes in 15 minutes. How many times can she slide before it closes?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
+      "It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
+      "The slide closes in 15 minutes. How many times can she slide before it closes?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
     ],
     [
-      "It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
-      "The store closes in an hour. Can he make to the store before it closes?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.",
+      "It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
+      "The store closes in an hour. Can he make to the store before it closes?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.",
     ],
   ]
   tab_cot: [

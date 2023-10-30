@@ -29,7 +29,7 @@
 
 * From [https://arxiv.org/abs/2205.11916](https://arxiv.org/abs/2205.11916)
 
-**1.1** A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.
+**1.1** A juggler has 16 balls. Half of the balls are golf balls and half of the golf balls are blue. How many blue golf balls are there?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
@@ -38,7 +38,7 @@
 
 <br>
 
-**1.2** Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible.
+**1.2** Daniel is in need of a haircut. His barber works Mondays, Wednesdays, and Fridays. So, Daniel went in for a haircut on Sunday. Does this make logical sense?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer.
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
@@ -50,7 +50,7 @@
 * From [https://arxiv.org/abs/2205.10625](https://arxiv.org/abs/2205.10625)
 
 
-**2.1**: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible. `{insert response #1}` The slide closes in 15 minutes. How many times can she slide before it closes?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible. `{insert response #2}`
+**2.1**: It takes Amy 4 minutes to climb to the top of a slide. It takes her 1 minute to slide down. How long does each trip take?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #1}` The slide closes in 15 minutes. How many times can she slide before it closes?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #2}`
 
 Response #1:
 
@@ -67,7 +67,7 @@ Response #2:
 | `mistralai/mistral-7b-instruct-v0.1` | - | - |
 <br>
 
-**2.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible. `{insert response #1}` The store closes in an hour. Can he make to the store before it closes?\nLet's work this out in a step by step way to be sure we have the right answer while responding as succinctly as possible. `{insert response #2}`
+**2.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #1}` The store closes in an hour. Can he make to the store before it closes?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #2}`
 
 Response #1:
 
