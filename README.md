@@ -10,7 +10,10 @@
 
 | model   | size |	alignment | pop quiz score | test date    | 
 |----------|:--------------:|:--------------:|:--------------:|:-------------:|
+| `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   |
+| `meta/llama-2-70b-chat` |   70B       |    RLHF     |    7/8       |  11/11/23   |
 | `mistralai/mistral-7b-instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
+
 
 <br>
 
@@ -24,6 +27,8 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
+| `openai/gpt-3.5-turbo` | To find the number of blue golf balls, we need to determine half of the total number of balls and then half of that result.<br /><br />Step 1: Half of 16 balls is 16/2 = 8 balls.<br />Step 2: Half of the golf balls is 8/2 = 4 balls.<br /><br />Therefore, there are 4 blue golf balls. | ✅ |
+| `meta/llama-2-70b-chat` | Sure, I'd be happy to help you with that! Here's a step-by-step guide to finding the number of blue golf balls:<br /><br />1. First, let's find out how many golf balls there are in total:<br />16 balls / 2 (half of the balls are golf balls) = 8 golf balls<br />2. Now, let's find out how many blue golf balls there are:<br />8 golf balls / 2 (half of the golf balls are blue) = 4 blue golf balls<br /><br />So, there are 4 blue golf balls. | ✅ |
 | `mistralai/mistral-7b-instruct-v0.1` | Here's how you can solve it:<br /><br />1. The juggler has 16 balls.<br />2. Half of these balls are golf balls, so there are 16 / 2 = 8 golf balls.<br />3. Half of the golf balls are blue, so there are 8 / 2 = 4 blue golf balls.<br /><br />Therefore, there are 4 blue golf balls. | ✅ |
 
 <br>
