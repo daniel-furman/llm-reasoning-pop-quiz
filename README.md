@@ -1,4 +1,4 @@
-# LLM-reasoning-pop-quiz
+# LLM Reasoning Pop Quiz
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://github.com/daniel-furman/Polyglot-or-Not/blob/main/LICENSE) 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/) 
@@ -6,7 +6,7 @@
 
 ---
 
-## Test Leaderboard
+## Leaderboard
 
 | model   | size |	alignment | pop quiz score | test date    | 
 |----------|:--------------:|:--------------:|:--------------:|:-------------:|
@@ -14,9 +14,7 @@
 
 <br>
 
-## Questions with Answers
-
-**NB**: Only the top performing models are shown in the responses below. See the ```notebooks``` folder for more results.
+## Results
 
 ### Section 1. Zero-shot CoT reasoning
 
