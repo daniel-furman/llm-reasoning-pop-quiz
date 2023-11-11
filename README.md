@@ -71,6 +71,7 @@ Response #2:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `mistralai/mistral-7b-instruct-v0.1` | The slide closes in 15 minutes. To find out how many times Amy can slide before it closes, we need to divide the total time the slide is open by the time it takes for one trip.<br /><br />1. The slide is open for 15 minutes.<br />2. Each trip takes 5 minutes.<br />3. Therefore, the number of trips Amy can make before the slide closes is 15 / 5 = 3 trips. | ✅ |
+
 <br>
 
 **2.2**: It takes Ben 10 minutes to drive to the store. It then takes him 4 minutes to find parking before he can start shopping. How long before he can start shopping?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #1}` The store closes in an hour. Can he make to the store before it closes?\nLet's respond succinctly and work this out in a step by step way to be sure we have the right answer. `{insert response #2}`
@@ -103,6 +104,7 @@ Response #2:
 |2|How many rows of blue tulips can Jackson plant?|Divide the number of blue tulips by the number of blue tulips per row.|24 / 8 = 3 rows|
 |3|What is the total number of rows that Jackson can plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
 
+<br>
 
 **3.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
@@ -116,3 +118,7 @@ Response #2:
 |3|How many loaves were sold in the afternoon?|The bakery sold 39 loaves in the afternoon.|39|
 |4|How many unsold loaves were returned to the bakery?|The grocery store returned 6 unsold loaves back to the bakery.|6|
 |5|How many loaves of bread did the bakery have left?|Subtract the number of unsold loaves from the total number of loaves baked.|200 - 6 = 194|
+
+<br>
+
+---
