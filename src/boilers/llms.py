@@ -10,12 +10,6 @@ import torch
 import openai
 
 
-def configure_openai() -> str:
-    load_dotenv()
-    openai_key = os.getenv("OPENAI_API_KEY")
-    return openai_key
-
-
 # supress warnings
 warnings.filterwarnings("ignore")
 
@@ -440,7 +434,8 @@ class openai_llm_boiler:
 
 ## gpt-3.5-turbo model
 def gpt_3_5_turbo_loader():
-    client = openai.OpenAI(api_key=configure_openai())
+    load_dotenv()
+    client = openai.OpenAI()
     return client
 
 
