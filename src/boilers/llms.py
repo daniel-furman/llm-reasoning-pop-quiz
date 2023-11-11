@@ -1,10 +1,20 @@
-# custom text generation function
-# requires "model" and "tokenizer" global vars initiated above
+# custom text generation functions for transformers and openai
 
 from typing import List
+import warnings
+from dotenv import load_dotenv
+import os
+
 import transformers
 import torch
-import warnings
+import openai
+
+
+def configure_openai() -> str:
+    load_dotenv()
+    openai_key = os.getenv("OPENAI_API_KEY")
+    return openai_key
+
 
 # supress warnings
 warnings.filterwarnings("ignore")
@@ -13,7 +23,7 @@ warnings.filterwarnings("ignore")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-class llm_boiler:
+class hf_llm_boiler:
     def __init__(self, model_id):
         self.model_id = model_id
         for f_idx, run_function in enumerate(MODEL_FUNCTIONS):
@@ -102,7 +112,7 @@ def zephyr(
     eos_token_ids: List[int],
     max_new_tokens: int = 128,
     do_sample: bool = True,
-    temperature: float = 0.7,
+    temperature: float = 0.1,
     top_p: float = 0.95,
     top_k: int = 50,
     repetition_penalty: float = 1.0,
@@ -111,7 +121,6 @@ def zephyr(
 ) -> str:
     # streamer = transformers.TextStreamer(tokenizer)
 
-    # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
     messages = [
         {"role": "user", "content": prompt},
     ]
@@ -209,7 +218,7 @@ def mistral(
     eos_token_ids: List[int],
     max_new_tokens: int = 128,
     do_sample: bool = True,
-    temperature: float = 0.7,
+    temperature: float = 0.1,
     top_p: float = 0.95,
     top_k: int = 50,
     repetition_penalty: float = 1.0,
@@ -218,7 +227,6 @@ def mistral(
 ) -> str:
     # streamer = transformers.TextStreamer(tokenizer)
 
-    # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
     messages = [
         {"role": "user", "content": prompt},
     ]
@@ -318,7 +326,7 @@ def llama(
     eos_token_ids: List[int],
     max_new_tokens: int = 128,
     do_sample: bool = True,
-    temperature: float = 0.7,
+    temperature: float = 0.1,
     top_p: float = 0.95,
     top_k: int = 50,
     repetition_penalty: float = 1.0,
@@ -327,7 +335,6 @@ def llama(
 ) -> str:
     # streamer = transformers.TextStreamer(tokenizer)
 
-    # We use the tokenizer's chat template to format each message - see https://huggingface.co/docs/transformers/main/en/chat_templating
     messages = [
         {"role": "system", "content": "Your are a helpful AI assistant."},
         {"role": "user", "content": prompt},
@@ -391,3 +398,84 @@ def llama(
 
 
 MODEL_FUNCTIONS.append(llama)
+
+
+class openai_llm_boiler:
+    def __init__(self, model_id):
+        self.model_id = model_id
+        for f_idx, run_function in enumerate(MODEL_FUNCTIONS):
+            if run_function.__name__.lower() in self.model_id:
+                print(
+                    f"Load function recognized for {self.model_id}: {LOAD_MODEL_FUNCTIONS[f_idx].__name__}"
+                )
+                self.load_fn = LOAD_MODEL_FUNCTIONS[f_idx]
+        for run_function in MODEL_FUNCTIONS:
+            if run_function.__name__.lower() in self.model_id:
+                print(
+                    f"Run function recognized for {self.model_id}: {run_function.__name__.lower()}"
+                )
+                self.run_fn = run_function
+        self.client = self.load_fn()
+        self.name = self.run_fn.__name__.lower()
+
+    def run(
+        self,
+        prompt,
+        temperature,
+        debug,
+    ):
+        return self.run_fn(
+            client=self.client,
+            prompt=prompt,
+            temperature=temperature,
+            debug=debug,
+        )
+
+
+# Models must have
+# * loader and generate functions
+# * run function must identify the correct model_id
+# * all functions must be added to master lists in order
+
+
+## gpt-3.5-turbo model
+def gpt_3_5_turbo_loader():
+    client = openai.OpenAI(api_key=configure_openai())
+    return client
+
+
+LOAD_MODEL_FUNCTIONS.append(gpt_3_5_turbo_loader)
+
+
+def gpt_3_5_turbo(
+    client,
+    prompt: str,
+    temperature: float = 0.1,
+    debug: bool = False,
+) -> str:
+    if debug:
+        print(f"*** Prompt\nYou are a helpful assistant. {prompt}")
+
+    # example with a system message
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {
+                "role": "user",
+                "content": prompt,
+            },
+        ],
+        temperature=temperature,
+        seed=42,
+    )
+
+    generated_text = response.choices[0].message.content
+
+    if debug:
+        print(f"*** Generated\n{generated_text}")
+
+    return generated_text
+
+
+MODEL_FUNCTIONS.append(gpt_3_5_turbo)
