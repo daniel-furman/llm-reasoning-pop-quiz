@@ -8,9 +8,9 @@
 
 ## Test Leaderboard
 
-| model   | size |	alignment | alpaca eval (win rate %)    | pop quiz score (**here**)    | test date    | 
-|----------|:--------------:|--------------|:--------------:|:-------------:|:--------------:|
-| `mistralai/mistral-7b-instruct-v0.1` |   7B       |    SFT   |   	-          |    7/8       |  11/11/23   |
+| model   | size |	alignment | pop quiz score | test date    | 
+|----------|:--------------:|--------------|:--------------:|:-------------:|
+| `mistralai/mistral-7b-instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
 
 <br>
 
