@@ -11,9 +11,9 @@
 | model   | size |	alignment | pop quiz score | test date    | 
 |----------|:--------------:|:--------------:|:--------------:|:-------------:|
 | `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   |
-| `meta/llama-2-70b-chat` |   70B       |    RLHF     |    7/8       |  11/11/23   |
-| `mistralai/mistral-7b-instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
-| `dfurman/mistral-7b-instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   |
+| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   |
+| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
+| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   |
 
 <br>
 
@@ -29,7 +29,8 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | Here's how you can solve it:<br /><br />1. The juggler has 16 balls.<br />2. Half of these balls are golf balls, so there are 16 / 2 = 8 golf balls.<br />3. Half of the golf balls are blue, so there are 8 / 2 = 4 blue golf balls.<br /><br />Therefore, there are 4 blue golf balls. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | Here's how you can solve it:<br /><br />1. The juggler has 16 balls.<br />2. Half of these balls are golf balls, so there are 16 / 2 = 8 golf balls.<br />3. Half of the golf balls are blue, so there are 8 / 2 = 4 blue golf balls.<br /><br />Therefore, there are 4 blue golf balls. | ✅ |
+| `dfurman/Mistral-7B-Instruct-v0.2` | 4 blue golf balls | ✅ |
 
 <br>
 
@@ -37,7 +38,8 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | No, it does not make logical sense. Here's why:<br /><br />1. The barber works only on Mondays, Wednesdays, and Fridays.<br />2. Therefore, if Daniel went in for a haircut on Sunday, he would not be able to get his hair cut because the barber was not working that day.<br />3. It seems like there might have been some confusion or misunderstanding about when the barber is available for appointments. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | No, it does not make logical sense. Here's why:<br /><br />1. The barber works only on Mondays, Wednesdays, and Fridays.<br />2. Therefore, if Daniel went in for a haircut on Sunday, he would not be able to get his hair cut because the barber was not working that day.<br />3. It seems like there might have been some confusion or misunderstanding about when the barber is available for appointments. | ✅ |
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. The problem states that Daniel's barber works only on Mondays, Wednesdays, and Fridays.<br />2. However, Daniel got his haircut on Sunday.<br />3. Since the barber doesn't work on Sundays, it does not logically make sense for Daniel to get his haircut on Sunday. | ✅ |
 
 <br>
 
@@ -45,7 +47,8 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | Initially, the cafeteria had 23 apples. They used 20 of those apples to make lunch, leaving them with 3 apples. Then, they bought 6 more apples, bringing their total to 9 apples. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | Initially, the cafeteria had 23 apples. They used 20 of those apples to make lunch, leaving them with 3 apples. Then, they bought 6 more apples, bringing their total to 9 apples. | ✅ |
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. Start with the initial number of apples: 23.<br />2. Subtract the number of apples used for lunch (20): 23 - 20 = 3.<br />3. Add the new apples purchased: 3 + 6 = 9.<br /><br />So, the cafeteria has 9 apples left after making lunch and buying more. | ✅ |
 
 <br>
 
@@ -53,8 +56,13 @@
 
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | Here's how you can solve it:<br /><br />1. We know that Roger has 3 children.<br />2. Then we are told that each of his kids invited 4 friends. So, in total, there are 3 children (Roger's) + 4 friends per child = 12 friends.<br />3. The question states that all of the friends came to the party. Therefore, there are 12 friends + 3 children (Roger's) = 15 children at the party. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | Here's how you can solve it:<br /><br />1. We know that Roger has 3 children.<br />2. Then we are told that each of his kids invited 4 friends. So, in total, there are 3 children (Roger's) + 4 friends per child = 12 friends.<br />3. The question states that all of the friends came to the party. Therefore, there are 12 friends + 3 children (Roger's) = 15 children at the party. | ✅ |
 
+1. We know that Roger has 3 children.
+2. Each of his kids invited 4 of their friends, so there are a total of 3 * 4 = 12 friends invited.
+3. Since all the friends came to the party, we can add the number of friends to the number of kids: 3 + 12 = 15.
+
+So, there are 15 children at the party.
 
 ### Section 2. Least to most prompting
 
@@ -67,13 +75,22 @@ Response #1:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` |  Each trip takes 5 minutes. Here's how we can figure that out:<br /><br />1. We know that it takes Amy 4 minutes to climb up the slide.<br />2. Then, once she reaches the top, it takes her only 1 minute to slide back down.<br />3. Therefore, the total time for one trip (climbing up and sliding back down) is 4 + 1 = 5 minutes. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` |  Each trip takes 5 minutes. Here's how we can figure that out:<br /><br />1. We know that it takes Amy 4 minutes to climb up the slide.<br />2. Then, once she reaches the top, it takes her only 1 minute to slide back down.<br />3. Therefore, the total time for one trip (climbing up and sliding back down) is 4 + 1 = 5 minutes. | ✅ |
+
+1. First, let's calculate how long it takes for Amy to complete one full trip on the slide. This includes climbing up and sliding down.
+2. Climbing up takes 4 minutes, and sliding down takes 1 minute. So, the total time for one trip is 4 + 1 = 5 minutes.
+3. Therefore, each trip takes 5 minutes.
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | The slide closes in 15 minutes. To find out how many times Amy can slide before it closes, we need to divide the total time the slide is open by the time it takes for one trip.<br /><br />1. The slide is open for 15 minutes.<br />2. Each trip takes 5 minutes.<br />3. Therefore, the number of trips Amy can make before the slide closes is 15 / 5 = 3 trips. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | The slide closes in 15 minutes. To find out how many times Amy can slide before it closes, we need to divide the total time the slide is open by the time it takes for one trip.<br /><br />1. The slide is open for 15 minutes.<br />2. Each trip takes 5 minutes.<br />3. Therefore, the number of trips Amy can make before the slide closes is 15 / 5 = 3 trips. | ✅ |
+
+1. We know that each trip takes 5 minutes.
+2. The slide closes in 15 minutes.
+3. To find out how many trips she can make, we divide the closing time by the trip duration: 15 / 5 = 3.
+So, she can slide 3 times before the slide closes.
 
 <br>
 
@@ -83,13 +100,21 @@ Response #1:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | Here's how we can solve this problem:<br /><br />1. We know that it takes Ben 10 minutes to drive to the store.<br />2. Once he arrives, it takes him an additional 4 minutes to find parking.<br />3. Therefore, the total time it takes for Ben to arrive at the store and find parking is 10 + 4 = 14 minutes.<br />4. Since Ben starts shopping once he finds parking, we can say that he can start shopping after 14 minutes.<br /><br />So, it takes Ben 14 minutes before he can start shopping. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | Here's how we can solve this problem:<br /><br />1. We know that it takes Ben 10 minutes to drive to the store.<br />2. Once he arrives, it takes him an additional 4 minutes to find parking.<br />3. Therefore, the total time it takes for Ben to arrive at the store and find parking is 10 + 4 = 14 minutes.<br />4. Since Ben starts shopping once he finds parking, we can say that he can start shopping after 14 minutes.<br /><br />So, it takes Ben 14 minutes before he can start shopping. | ✅ |
+
+1. First, we need to determine how long it takes for Ben to drive to the store. He drives for 10 minutes, so that is our first time interval.
+2. Next, we need to add the time it takes for him to find parking (4 minutes) to the driving time. So, his total time before he can start shopping is 10 + 4 = 14 minutes.
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
-| `mistralai/mistral-7b-instruct-v0.1` | Yes, Ben can make it to the store before it closes. Here's how we can calculate this:<br /><br />1. The store closes in an hour, which is 60 minutes.<br />2. Ben takes 14 minutes to arrive at the store and find parking.<br />3. Therefore, Ben will have 60 - 14 = 46 minutes left to shop before the store closes.<br />4. Assuming Ben shops at a constant pace, he can cover 46 minutes of shopping time in 46 minutes.<br />5. Therefore, Ben can make it to the store before it closes.<br /><br />So, yes, Ben can make it to the store before it closes. | ✅ |
+| `mistralai/Mistral-7B-Instruct-v0.1` | Yes, Ben can make it to the store before it closes. Here's how we can calculate this:<br /><br />1. The store closes in an hour, which is 60 minutes.<br />2. Ben takes 14 minutes to arrive at the store and find parking.<br />3. Therefore, Ben will have 60 - 14 = 46 minutes left to shop before the store closes.<br />4. Assuming Ben shops at a constant pace, he can cover 46 minutes of shopping time in 46 minutes.<br />5. Therefore, Ben can make it to the store before it closes.<br /><br />So, yes, Ben can make it to the store before it closes. | ✅ |
+
+1. We know that the store closes in an hour, which is equal to 60 minutes.
+2. Ben has already spent 14 minutes getting to the store and finding parking.
+3. To find out if he can make it to the store before it closes, we subtract the time he has already spent from the closing time: 60 - 14 = 46 minutes.
+4. Since Ben still has 46 minutes left until the store closes, he can make it to the store before it closes.
 
 <br>
 
@@ -99,7 +124,7 @@ Response #2:
 
 **3.1**: Jackson is planting tulips. He can fit 6 red tulips in a row and 8 blue tulips in a row. If Jackson buys 36 red tulips and 24 blue tulips, how many rows of flowers will he plant?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
-`mistralai/mistral-7b-instruct-v0.1` (✅): 
+`mistralai/Mistral-7B-Instruct-v0.1` (✅): 
 
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:|
@@ -107,12 +132,43 @@ Response #2:
 |2|How many rows of blue tulips can Jackson plant?|Divide the number of blue tulips by the number of blue tulips per row.|24 / 8 = 3 rows|
 |3|What is the total number of rows that Jackson can plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
 
+
+1. How many red tulips can Jackson plant in one row? | 6 |  |
+2. How many blue tulips can Jackson plant in one row? | 8 |  |
+3. How many red tulips does Jackson have to plant? | 36 | Multiply 36 by 1 (since there's only one way to arrange them) |
+4. How many blue tulips does Jackson have to plant? | 24 | Multiply 24 by 1 (since there's only one way to arrange them) |
+5. What is the greatest common factor (GCF) of the number of red tulips and blue tulips? | 8 | Use Euclidean algorithm or prime factorization method |
+6. How many full rows of red tulips can Jackson plant with his current supply? | 4.5 | Divide the total number of red tulips by the GCF |
+7. How many full rows of blue tulips can Jackson plant with his current supply? | 3 | Divide the total number of blue tulips by the GCF |
+8. Can Jackson plant any remaining red tulips or blue tulips in the same row? | No | Since the GCF is not a factor of either number, no additional tulips can be planted in the same row |
+9. Therefore, Jackson will plant 4 full rows of red tulips and 3 full rows of blue tulips. |  |  |
+
+1. How many loaves were baked?
+The bakers baked 200 loaves of bread.
+
+2. How many loaves were sold in the morning?
+They sold 93 loaves in the morning.
+
+3. How many loaves were sold in the afternoon?
+They sold 39 loaves in the afternoon.
+
+4. How many loaves were returned by the grocery store?
+A grocery store returned 6 unsold loaves back to the bakery.
+
+5. What is the total number of loaves sold or returned?
+The bakery sold or returned a total of 93 + 39 = 132 loaves.
+
+6. How many loaves are left at the bakery?
+To find out how many loaves are left, we subtract the total number of loaves sold or returned from the initial amount baked: 200 - 132 = 68.
+
+So, the bakery had 68 loaves of bread left after selling some and returning others.
+
 <br>
 
 **3.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
 
 
-`mistralai/mistral-7b-instruct-v0.1` (❌): 
+`mistralai/Mistral-7B-Instruct-v0.1` (❌): 
 
 |step|subquestion|procedure|result|
 |:---|:----------|:--------|:-----:|
