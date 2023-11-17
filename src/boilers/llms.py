@@ -29,9 +29,9 @@ class hf_llm_boiler:
                 )
                 self.load_fn = LOAD_MODEL_FUNCTIONS[f_idx]
         for run_function in MODEL_FUNCTIONS:
-            if run_function.__name__.lower() in self.model_id:
+            if run_function.__name__.lower() in self.model_id.lower():
                 print(
-                    f"Run function recognized for {self.model_id.lower()}: {run_function.__name__.lower()}"
+                    f"Run function recognized for {self.model_id}: {run_function.__name__.lower()}"
                 )
                 self.run_fn = run_function
         self.model, self.tokenizer = self.load_fn(self.model_id, self.peft)
