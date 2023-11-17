@@ -57,12 +57,7 @@
 | model                        |  response             | correct  |
 |------------------------------|-----------------------|:---------:|
 | `mistralai/Mistral-7B-Instruct-v0.1` | Here's how you can solve it:<br /><br />1. We know that Roger has 3 children.<br />2. Then we are told that each of his kids invited 4 friends. So, in total, there are 3 children (Roger's) + 4 friends per child = 12 friends.<br />3. The question states that all of the friends came to the party. Therefore, there are 12 friends + 3 children (Roger's) = 15 children at the party. | ✅ |
-
-1. We know that Roger has 3 children.
-2. Each of his kids invited 4 of their friends, so there are a total of 3 * 4 = 12 friends invited.
-3. Since all the friends came to the party, we can add the number of friends to the number of kids: 3 + 12 = 15.
-
-So, there are 15 children at the party.
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. We know that Roger has 3 children.<br />2. Each of his kids invited 4 of their friends, so there are a total of 3 * 4 = 12 friends invited.<br />3. Since all the friends came to the party, we can add the number of friends to the number of kids: 3 + 12 = 15.<br /><br />So, there are 15 children at the party. | ✅ |
 
 ### Section 2. Least to most prompting
 
@@ -76,21 +71,15 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `mistralai/Mistral-7B-Instruct-v0.1` |  Each trip takes 5 minutes. Here's how we can figure that out:<br /><br />1. We know that it takes Amy 4 minutes to climb up the slide.<br />2. Then, once she reaches the top, it takes her only 1 minute to slide back down.<br />3. Therefore, the total time for one trip (climbing up and sliding back down) is 4 + 1 = 5 minutes. | ✅ |
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. First, let's calculate how long it takes for Amy to complete one full trip on the slide. This includes climbing up and sliding down.<br />2. Climbing up takes 4 minutes, and sliding down takes 1 minute. So, the total time for one trip is 4 + 1 = 5 minutes.<br />3. Therefore, each trip takes 5 minutes. | ✅ |
 
-1. First, let's calculate how long it takes for Amy to complete one full trip on the slide. This includes climbing up and sliding down.
-2. Climbing up takes 4 minutes, and sliding down takes 1 minute. So, the total time for one trip is 4 + 1 = 5 minutes.
-3. Therefore, each trip takes 5 minutes.
 
 Response #2:
 
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `mistralai/Mistral-7B-Instruct-v0.1` | The slide closes in 15 minutes. To find out how many times Amy can slide before it closes, we need to divide the total time the slide is open by the time it takes for one trip.<br /><br />1. The slide is open for 15 minutes.<br />2. Each trip takes 5 minutes.<br />3. Therefore, the number of trips Amy can make before the slide closes is 15 / 5 = 3 trips. | ✅ |
-
-1. We know that each trip takes 5 minutes.
-2. The slide closes in 15 minutes.
-3. To find out how many trips she can make, we divide the closing time by the trip duration: 15 / 5 = 3.
-So, she can slide 3 times before the slide closes.
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. We know that each trip takes 5 minutes.<br />2. The slide closes in 15 minutes.<br />3. To find out how many trips she can make, we divide the closing time by the trip duration: 15 / 5 = 3.<br />So, she can slide 3 times before the slide closes. | ✅ |
 
 <br>
 
@@ -110,11 +99,7 @@ Response #2:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `mistralai/Mistral-7B-Instruct-v0.1` | Yes, Ben can make it to the store before it closes. Here's how we can calculate this:<br /><br />1. The store closes in an hour, which is 60 minutes.<br />2. Ben takes 14 minutes to arrive at the store and find parking.<br />3. Therefore, Ben will have 60 - 14 = 46 minutes left to shop before the store closes.<br />4. Assuming Ben shops at a constant pace, he can cover 46 minutes of shopping time in 46 minutes.<br />5. Therefore, Ben can make it to the store before it closes.<br /><br />So, yes, Ben can make it to the store before it closes. | ✅ |
-
-1. We know that the store closes in an hour, which is equal to 60 minutes.
-2. Ben has already spent 14 minutes getting to the store and finding parking.
-3. To find out if he can make it to the store before it closes, we subtract the time he has already spent from the closing time: 60 - 14 = 46 minutes.
-4. Since Ben still has 46 minutes left until the store closes, he can make it to the store before it closes.
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. We know that the store closes in an hour, which is equal to 60 minutes.<br />2. Ben has already spent 14 minutes getting to the store and finding parking.<br />3. To find out if he can make it to the store before it closes, we subtract the time he has already spent from the closing time: 60 - 14 = 46 minutes.<br />4. Since Ben still has 46 minutes left until the store closes, he can make it to the store before it closes. | ✅ |
 
 <br>
 
@@ -133,6 +118,10 @@ Response #2:
 |3|What is the total number of rows that Jackson can plant?|Add the number of rows of red tulips to the number of rows of blue tulips.|6 + 3 = 9 rows|
 
 
+`dfurman/Mistral-7B-Instruct-v0.2` (❌): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
 1. How many red tulips can Jackson plant in one row? | 6 |  |
 2. How many blue tulips can Jackson plant in one row? | 8 |  |
 3. How many red tulips does Jackson have to plant? | 36 | Multiply 36 by 1 (since there's only one way to arrange them) |
@@ -143,6 +132,24 @@ Response #2:
 8. Can Jackson plant any remaining red tulips or blue tulips in the same row? | No | Since the GCF is not a factor of either number, no additional tulips can be planted in the same row |
 9. Therefore, Jackson will plant 4 full rows of red tulips and 3 full rows of blue tulips. |  |  |
 
+<br>
+
+**3.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
+
+`mistralai/Mistral-7B-Instruct-v0.1` (❌): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
+|1|How many loaves were baked on Monday morning?|The bakery baked 200 loaves on Monday morning.|200|
+|2|How many loaves were sold in the morning?|The bakery sold 93 loaves in the morning.|93|
+|3|How many loaves were sold in the afternoon?|The bakery sold 39 loaves in the afternoon.|39|
+|4|How many unsold loaves were returned to the bakery?|The grocery store returned 6 unsold loaves back to the bakery.|6|
+|5|How many loaves of bread did the bakery have left?|Subtract the number of unsold loaves from the total number of loaves baked.|200 - 6 = 194|
+
+`dfurman/Mistral-7B-Instruct-v0.2` (❌): 
+
+|step|subquestion|procedure|result|
+|:---|:----------|:--------|:-----:|
 1. How many loaves were baked?
 The bakers baked 200 loaves of bread.
 
@@ -162,21 +169,6 @@ The bakery sold or returned a total of 93 + 39 = 132 loaves.
 To find out how many loaves are left, we subtract the total number of loaves sold or returned from the initial amount baked: 200 - 132 = 68.
 
 So, the bakery had 68 loaves of bread left after selling some and returning others.
-
-<br>
-
-**3.2**: The bakers at the Beverly Hills Bakery baked 200 loaves of bread on Monday morning. They sold 93 loaves in the morning and 39 loaves in the afternoon. A grocery store then returned 6 unsold loaves back to the bakery. How many loaves of bread did the bakery have left?\nRespond as succinctly as possible. Format the response as a completion of this table.\n|step|subquestion|procedure|result|\n|:---|:----------|:--------|:-----:|.
-
-
-`mistralai/Mistral-7B-Instruct-v0.1` (❌): 
-
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|
-|1|How many loaves were baked on Monday morning?|The bakery baked 200 loaves on Monday morning.|200|
-|2|How many loaves were sold in the morning?|The bakery sold 93 loaves in the morning.|93|
-|3|How many loaves were sold in the afternoon?|The bakery sold 39 loaves in the afternoon.|39|
-|4|How many unsold loaves were returned to the bakery?|The grocery store returned 6 unsold loaves back to the bakery.|6|
-|5|How many loaves of bread did the bakery have left?|Subtract the number of unsold loaves from the total number of loaves baked.|200 - 6 = 194|
 
 <br>
 
