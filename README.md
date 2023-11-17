@@ -9,12 +9,12 @@
 ## Leaderboard
 
 | model   | size |	alignment | pop quiz score | test date    | notes | run notebook |
-|----------|:--------------:|:--------------:|:--------------:|:-------------:|----------|:----------:|
-| `openai/gpt-4` |   ?       |    RLHF     |    8/8       |  11/16/23   | Perfect score | [here](notebooks/gpt_4.ipynb) |
-| `openai/gpt-3.5-turbo` |   ?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/gpt_3.5_turbo.ipynb) |
-| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/llama_2_70b_chat.ipynb) |
-| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/mistral_ai_mistral_7b_instruct_v0.1.ipynb) |
-| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT (peft)  |    6/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) | [here](notebooks/dfurman_mistral_7b_instruct_v0_2.ipynb) |
+|----------|:--------------:|:--------------:|:--------------:|:-------------:|----------|----------|
+| `openai/gpt-4` |   ?       |    RLHF     |    8/8       |  11/16/23   | Perfect score | [gpt_4.ipynb](notebooks/gpt_4.ipynb) |
+| `openai/gpt-3.5-turbo` |   ?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [gpt_3.5_turbo.ipynb](notebooks/gpt_3.5_turbo.ipynb) |
+| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [llama_2_70b_chat.ipynb](notebooks/llama_2_70b_chat.ipynb) |
+| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [mistral_ai_mistral_7b_instruct_v0.1.ipynb](notebooks/mistral_ai_mistral_7b_instruct_v0.1.ipynb) |
+| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT (peft)  |    6/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) | [dfurman_mistral_7b_instruct_v0_2.ipynb](notebooks/dfurman_mistral_7b_instruct_v0_2.ipynb) |
 
 <br>
 
