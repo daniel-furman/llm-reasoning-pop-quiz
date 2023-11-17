@@ -23,7 +23,7 @@ class hf_llm_boiler:
         self.model_id = model_id
         self.peft = peft
         for f_idx, run_function in enumerate(MODEL_FUNCTIONS):
-            if run_function.__name__.lower() in self.model_id:
+            if run_function.__name__.lower() in self.model_id.lower():
                 print(
                     f"Load function recognized for {self.model_id}: {LOAD_MODEL_FUNCTIONS[f_idx].__name__}"
                 )
@@ -199,7 +199,6 @@ def mistral_loader(
     #)
 
     if not peft:
-
         model = transformers.AutoModelForCausalLM.from_pretrained(
             model_id,
             torch_dtype=torch.float16,
