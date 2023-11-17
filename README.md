@@ -90,9 +90,7 @@ Response #1:
 | model                        | response             | correct   |
 |------------------------------|----------------------|:---------:|
 | `mistralai/Mistral-7B-Instruct-v0.1` | Here's how we can solve this problem:<br /><br />1. We know that it takes Ben 10 minutes to drive to the store.<br />2. Once he arrives, it takes him an additional 4 minutes to find parking.<br />3. Therefore, the total time it takes for Ben to arrive at the store and find parking is 10 + 4 = 14 minutes.<br />4. Since Ben starts shopping once he finds parking, we can say that he can start shopping after 14 minutes.<br /><br />So, it takes Ben 14 minutes before he can start shopping. | ✅ |
-
-1. First, we need to determine how long it takes for Ben to drive to the store. He drives for 10 minutes, so that is our first time interval.
-2. Next, we need to add the time it takes for him to find parking (4 minutes) to the driving time. So, his total time before he can start shopping is 10 + 4 = 14 minutes.
+| `dfurman/Mistral-7B-Instruct-v0.2` | 1. First, we need to determine how long it takes for Ben to drive to the store. He drives for 10 minutes, so that is our first time interval.<br />2. Next, we need to add the time it takes for him to find parking (4 minutes) to the driving time. So, his total time before he can start shopping is 10 + 4 = 14 minutes. | ✅ |
 
 Response #2:
 
