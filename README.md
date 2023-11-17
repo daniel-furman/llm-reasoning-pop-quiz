@@ -8,12 +8,12 @@
 
 ## Leaderboard
 
-| model   | size |	alignment | pop quiz score | test date    | 
-|----------|:--------------:|:--------------:|:--------------:|:-------------:|
-| `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   |
-| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   |
-| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
-| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   |
+| model   | size |	alignment | pop quiz score | test date    | notes |
+|----------|:--------------:|:--------------:|:--------------:|:-------------:|----------|
+| `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
+| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
+| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
+| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) |
 
 <br>
 
