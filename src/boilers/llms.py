@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 import transformers
-from peft import PeftModel, PeftConfig
+#from peft import PeftModel, PeftConfig
 import torch
 import openai
 
@@ -191,12 +191,12 @@ def mistral_loader(
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    #bnb_config = transformers.BitsAndBytesConfig(
+    # bnb_config = transformers.BitsAndBytesConfig(
     #    load_in_4bit=True,
     #    bnb_4bit_use_double_quant=True,
     #    bnb_4bit_quant_type="nf4",
     #    bnb_4bit_compute_dtype=torch.bfloat16,
-    #)
+    # )
 
     if not peft:
         model = transformers.AutoModelForCausalLM.from_pretrained(
@@ -212,10 +212,7 @@ def mistral_loader(
             device_map="auto",
         )
 
-        model = PeftModel.from_pretrained(
-            model, 
-            model_id
-        )
+        model = PeftModel.from_pretrained(model, model_id)
 
     return model, tokenizer
 
@@ -493,3 +490,47 @@ def gpt_3_5_turbo(
 
 
 MODEL_FUNCTIONS.append(gpt_3_5_turbo)
+
+
+## gpt-4 model
+def gpt_4_loader():
+    load_dotenv()
+    client = openai.OpenAI()
+    return client
+
+
+LOAD_MODEL_FUNCTIONS.append(gpt_4_loader)
+
+
+def gpt_4(
+    client,
+    prompt: str,
+    temperature: float = 0.1,
+    debug: bool = False,
+) -> str:
+    if debug:
+        print(f"*** Prompt\nYou are a helpful assistant. {prompt}")
+
+    # example with a system message
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {
+                "role": "user",
+                "content": prompt,
+            },
+        ],
+        temperature=temperature,
+        seed=42,
+    )
+
+    generated_text = response.choices[0].message.content
+
+    if debug:
+        print(f"*** Generated\n{generated_text}")
+
+    return generated_text
+
+
+MODEL_FUNCTIONS.append(gpt_4)

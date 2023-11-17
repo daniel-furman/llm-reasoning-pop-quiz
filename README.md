@@ -8,12 +8,13 @@
 
 ## Leaderboard
 
-| model   | size |	alignment | pop quiz score | test date    | notes |
+| model   | size |	alignment | pop quiz score | test date    | notes | run file |
 |----------|:--------------:|:--------------:|:--------------:|:-------------:|----------|
-| `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
-| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
-| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) |
-| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) |
+| `openai/gpt-4` |   ?       |    RLHF     |    8/8       |  11/16/23   | Perfect score | [here](notebooks/gpt_4.ipynb) |
+| `openai/gpt-3.5-turbo` |   ?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/gpt_4.ipynb) |
+| `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/gpt_4.ipynb) |
+| `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/gpt_4.ipynb) |
+| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) | [here](notebooks/gpt_4.ipynb) |
 
 <br>
 
