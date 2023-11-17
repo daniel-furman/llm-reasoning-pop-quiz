@@ -14,7 +14,7 @@
 | `openai/gpt-3.5-turbo` |   ?       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/gpt_3.5_turbo.ipynb) |
 | `meta-llama/Llama-2-70b-chat-hf` |   70B       |    RLHF     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/llama_2_70b_chat.ipynb) |
 | `mistralai/Mistral-7B-Instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   | Missed harder tab CoT question (3.2) | [here](notebooks/mistral_ai_mistral_7b_instruct_v0.1.ipynb) |
-| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    Parameter-efficient SFT   |    6/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) | [here](notebooks/dfurman_mistral_7b_instruct_v0_2.ipynb) |
+| `dfurman/Mistral-7B-Instruct-v0.2` |   7B       |    SFT (peft)  |    6/8       |  11/16/23   | Missed tab CoT questions (3.1 & 3.2) | [here](notebooks/dfurman_mistral_7b_instruct_v0_2.ipynb) |
 
 <br>
 
