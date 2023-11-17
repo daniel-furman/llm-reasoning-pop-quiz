@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 
 import transformers
+from peft import PeftModel, PeftConfig
 import torch
 import openai
 
@@ -18,8 +19,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 class hf_llm_boiler:
-    def __init__(self, model_id):
+    def __init__(self, model_id, peft):
         self.model_id = model_id
+        self.peft = peft
         for f_idx, run_function in enumerate(MODEL_FUNCTIONS):
             if run_function.__name__.lower() in self.model_id:
                 print(
@@ -32,7 +34,7 @@ class hf_llm_boiler:
                     f"Run function recognized for {self.model_id}: {run_function.__name__.lower()}"
                 )
                 self.run_fn = run_function
-        self.model, self.tokenizer = self.load_fn(self.model_id)
+        self.model, self.tokenizer = self.load_fn(self.model_id, self.peft)
         self.name = self.run_fn.__name__.lower()
 
     def run(
@@ -76,6 +78,7 @@ MODEL_FUNCTIONS = []
 ## zephyr models
 def zephyr_loader(
     model_id: str,  # HF model id
+    peft: bool,  # Whether model is a peft adapter
 ):
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
@@ -182,22 +185,38 @@ MODEL_FUNCTIONS.append(zephyr)
 ## mistral models
 def mistral_loader(
     model_id: str,  # HF model id
+    peft: bool,  # Whether model is a peft adapter
 ):
+    config = PeftConfig.from_pretrained(model_id)
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token
 
-    bnb_config = transformers.BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
+    #bnb_config = transformers.BitsAndBytesConfig(
+    #    load_in_4bit=True,
+    #    bnb_4bit_use_double_quant=True,
+    #    bnb_4bit_quant_type="nf4",
+    #    bnb_4bit_compute_dtype=torch.bfloat16,
+    #)
 
-    model = transformers.AutoModelForCausalLM.from_pretrained(
-        model_id,
-        quantization_config=bnb_config,
-        device_map={"": 0},
-    )
+    if not peft:
+
+        model = transformers.AutoModelForCausalLM.from_pretrained(
+            model_id,
+            torch_dtype=torch.float16,
+            device_map="auto",
+        )
+
+    if peft:
+        model = transformers.AutoModelForCausalLM.from_pretrained(
+            config.base_model_name_or_path,
+            torch_dtype=torch.float16,
+            device_map="auto",
+        )
+
+        model = PeftModel.from_pretrained(
+            model, 
+            model_id
+        )
 
     return model, tokenizer
 
@@ -290,6 +309,7 @@ MODEL_FUNCTIONS.append(mistral)
 
 def llama_loader(
     model_id: str,  # HF model id
+    peft: bool,  # Whether model is a peft adapter
 ):
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
     tokenizer.pad_token = tokenizer.eos_token

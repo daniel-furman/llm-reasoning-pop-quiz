@@ -1,6 +1,7 @@
 transformers
 openai==1.2.*
 accelerate
+peft
 torch
 einops
 bitsandbytes
