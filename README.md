@@ -118,8 +118,6 @@ Response #2:
 
 `dfurman/Mistral-7B-Instruct-v0.2` (❌): 
 
-|step|subquestion|procedure|result|
-|:---|:----------|:--------|:-----:|
 1. How many red tulips can Jackson plant in one row? | 6 |  |
 2. How many blue tulips can Jackson plant in one row? | 8 |  |
 3. How many red tulips does Jackson have to plant? | 36 | Multiply 36 by 1 (since there's only one way to arrange them) |
