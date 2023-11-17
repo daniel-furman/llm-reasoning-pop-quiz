@@ -13,13 +13,13 @@
 | `openai/gpt-3.5-turbo` |   20B?       |    RLHF     |    7/8       |  11/11/23   |
 | `meta/llama-2-70b-chat` |   70B       |    RLHF     |    7/8       |  11/11/23   |
 | `mistralai/mistral-7b-instruct-v0.1` |   7B       |    SFT     |    7/8       |  11/11/23   |
-| `dfurman/mistral-7b-instruct-v0.2` |   7B       |    SFT (peft)    |    7/8       |  11/16/23   |
+| `dfurman/mistral-7b-instruct-v0.2` |   7B       |    SFT w/ `peft`    |    7/8       |  11/16/23   |
 
 <br>
 
 ## Results
 
-*Notes*: See `./notebooks` for all model outputs. 
+*Note*: See `./notebooks` for all model outputs. 
 
 ### Section 1. Zero-shot CoT reasoning
 
